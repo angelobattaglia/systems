@@ -1,0 +1,1212 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/theory_IOprimitives_4/">
+      
+      
+        <link rel="prev" href="../theory_IOprimitives_3/">
+      
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>POSIX system calls for File Handling - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#posix-system-calls-for-file-handling" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              POSIX system calls for File Handling
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to MkDocs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Process_ID/" class="md-tabs__link">
+        
+  
+    
+  
+  Process ID
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../command_line/" class="md-tabs__link">
+        
+  
+    
+  
+  Commands
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../file_system/" class="md-tabs__link">
+        
+  
+    
+  
+  File system
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../file_system_refined/" class="md-tabs__link">
+        
+  
+    
+  
+  File system refined
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pthreads/" class="md-tabs__link">
+        
+  
+    
+  
+  POSIX threads or Pthreads
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory_IOprimitives_1/" class="md-tabs__link">
+        
+  
+    
+  
+  I/O Primitives in C
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory_IOprimitives_2/" class="md-tabs__link">
+        
+  
+    
+  
+  I/O Primitives in C
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory_IOprimitives_3/" class="md-tabs__link">
+        
+  
+    
+  
+  I/O Primitives in C
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  POSIX system calls for File Handling
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Process_ID/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process ID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command_line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_system/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File system
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_system_refined/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File system refined
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pthreads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POSIX threads or Pthreads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory_IOprimitives_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I/O Primitives in C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory_IOprimitives_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I/O Primitives in C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory_IOprimitives_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I/O Primitives in C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    POSIX system calls for File Handling
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    POSIX system calls for File Handling
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. open()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. open()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. read()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. read()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. write()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. write()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-close" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. close()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. close()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-example-file-copy-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Example: File Copy Program
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      1. open()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1. open()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      2. read()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="2. read()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      3. write()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3. write()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-close" class="md-nav__link">
+    <span class="md-ellipsis">
+      4. close()
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="4. close()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Syntax
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-example-file-copy-program" class="md-nav__link">
+    <span class="md-ellipsis">
+      Complete Example: File Copy Program
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="posix-system-calls-for-file-handling">POSIX system calls for File Handling</h1>
+<p>The <strong>POSIX system calls</strong> <code>open()</code>, <code>read()</code>, <code>write()</code>, and <code>close()</code> are low-level file operations used in C programming to interact with files. They provide direct interaction with the operating system and are included in <code>&lt;fcntl.h&gt;</code> and <code>&lt;unistd.h&gt;</code>. Below is an explanation of how to use each of these system calls, with examples.</p>
+<h3 id="1-open">1. <strong><code>open()</code></strong></h3>
+<p>The <code>open()</code> system call opens a file for reading, writing, or both. It returns a <strong>file descriptor</strong> (an integer) that is used in subsequent file operations.</p>
+<h4 id="syntax"><strong>Syntax</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+
+int open(const char *pathname, int flags, mode_t mode);
+</code></pre>
+<ul>
+<li><strong><code>pathname</code></strong>: The file to open (e.g., <code>"file.txt"</code>).</li>
+<li><strong><code>flags</code></strong>: Specifies the access mode:</li>
+<li><code>O_RDONLY</code>: Open for reading.</li>
+<li><code>O_WRONLY</code>: Open for writing.</li>
+<li><code>O_RDWR</code>: Open for reading and writing.</li>
+<li>Add flags like <code>O_CREAT</code> (create file if it doesn’t exist) or <code>O_APPEND</code> (append mode).</li>
+<li><strong><code>mode</code></strong>: File permissions (only used if creating a file, e.g., <code>0644</code> for <code>rw-r--r--</code>).</li>
+</ul>
+<h4 id="example"><strong>Example</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    int fd = open(&quot;example.txt&quot;, O_WRONLY | O_CREAT, 0644);
+    if (fd == -1) {
+        perror(&quot;open&quot;);
+        return 1;
+    }
+    // Use `fd` for further operations
+    close(fd);
+    return 0;
+}
+</code></pre>
+<hr />
+<h3 id="2-read">2. <strong><code>read()</code></strong></h3>
+<p>The <code>read()</code> system call reads data from a file into a buffer.</p>
+<h4 id="syntax_1"><strong>Syntax</strong></h4>
+<pre><code class="language-c">ssize_t read(int fd, void *buf, size_t count);
+</code></pre>
+<ul>
+<li><strong><code>fd</code></strong>: File descriptor returned by <code>open()</code>.</li>
+<li><strong><code>buf</code></strong>: Buffer to store the data.</li>
+<li><strong><code>count</code></strong>: Number of bytes to read.</li>
+<li><strong>Returns</strong>: Number of bytes actually read, or <code>0</code> if end-of-file (EOF) is reached.</li>
+</ul>
+<h4 id="example_1"><strong>Example</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    char buffer[128];
+    int fd = open(&quot;example.txt&quot;, O_RDONLY);
+    if (fd == -1) {
+        perror(&quot;open&quot;);
+        return 1;
+    }
+    ssize_t bytesRead = read(fd, buffer, sizeof(buffer) - 1);
+    if (bytesRead == -1) {
+        perror(&quot;read&quot;);
+        close(fd);
+        return 1;
+    }
+    buffer[bytesRead] = '\0'; // Null-terminate the buffer
+    printf(&quot;Read: %s\n&quot;, buffer);
+    close(fd);
+    return 0;
+}
+</code></pre>
+<hr />
+<h3 id="3-write">3. <strong><code>write()</code></strong></h3>
+<p>The <code>write()</code> system call writes data from a buffer to a file.</p>
+<h4 id="syntax_2"><strong>Syntax</strong></h4>
+<pre><code class="language-c">ssize_t write(int fd, const void *buf, size_t count);
+</code></pre>
+<ul>
+<li><strong><code>fd</code></strong>: File descriptor returned by <code>open()</code>.</li>
+<li><strong><code>buf</code></strong>: Buffer containing the data to write.</li>
+<li><strong><code>count</code></strong>: Number of bytes to write.</li>
+<li><strong>Returns</strong>: Number of bytes written.</li>
+</ul>
+<h4 id="example_2"><strong>Example</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    const char *text = &quot;Hello, world!\n&quot;;
+    int fd = open(&quot;example.txt&quot;, O_WRONLY | O_CREAT | O_APPEND, 0644);
+    if (fd == -1) {
+        perror(&quot;open&quot;);
+        return 1;
+    }
+    ssize_t bytesWritten = write(fd, text, 14);
+    if (bytesWritten == -1) {
+        perror(&quot;write&quot;);
+        close(fd);
+        return 1;
+    }
+    printf(&quot;Wrote %zd bytes\n&quot;, bytesWritten);
+    close(fd);
+    return 0;
+}
+</code></pre>
+<h3 id="4-close">4. <strong><code>close()</code></strong></h3>
+<p>The <code>close()</code> system call closes an open file descriptor, releasing the resources associated with it.</p>
+<h4 id="syntax_3"><strong>Syntax</strong></h4>
+<pre><code class="language-c">int close(int fd);
+</code></pre>
+<ul>
+<li><strong><code>fd</code></strong>: File descriptor to close.</li>
+<li><strong>Returns</strong>: <code>0</code> on success, or <code>-1</code> on failure.</li>
+</ul>
+<h4 id="example_3"><strong>Example</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    int fd = open(&quot;example.txt&quot;, O_RDONLY);
+    if (fd == -1) {
+        perror(&quot;open&quot;);
+        return 1;
+    }
+    // Perform file operations...
+    if (close(fd) == -1) {
+        perror(&quot;close&quot;);
+        return 1;
+    }
+    return 0;
+}
+</code></pre>
+<hr />
+<h3 id="complete-example-file-copy-program">Complete Example: File Copy Program</h3>
+<p>Here's a small program that copies the content of one file to another:</p>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    char buffer[1024];
+    ssize_t bytesRead, bytesWritten;
+
+    // Open source file
+    int source = open(&quot;source.txt&quot;, O_RDONLY);
+    if (source == -1) {
+        perror(&quot;open source&quot;);
+        return 1;
+    }
+
+    // Open destination file
+    int dest = open(&quot;dest.txt&quot;, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (dest == -1) {
+        perror(&quot;open dest&quot;);
+        close(source);
+        return 1;
+    }
+
+    // Read and write loop
+    while ((bytesRead = read(source, buffer, sizeof(buffer))) &gt; 0) {
+        bytesWritten = write(dest, buffer, bytesRead);
+        if (bytesWritten != bytesRead) {
+            perror(&quot;write&quot;);
+            close(source);
+            close(dest);
+            return 1;
+        }
+    }
+    if (bytesRead == -1) {
+        perror(&quot;read&quot;);
+    }
+
+    // Close files
+    close(source);
+    close(dest);
+    return 0;
+}
+</code></pre>
+<hr />
+<h3 id="notes">Notes:</h3>
+<ul>
+<li>Always check the return values of these calls for errors.</li>
+<li>Errors can be inspected using <code>errno</code> and printed with <code>perror()</code> or <code>strerror()</code>.</li>
+<li>File permissions (e.g., <code>0644</code>) are written in octal.</li>
+</ul>
+<p>Let me know if you have further questions!</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>

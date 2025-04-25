@@ -1,0 +1,33 @@
+site_name: OS Docs
+site_url: https://angelobattaglia.github.io/OSdocs
+theme:
+  # name of the extension material for mkdocs
+  name: material
+  # Setting up the logo and the favicon
+  # favicon: images/favicon.ico
+  # logo: images/sys.png
+  # features, more on these if you visit the "Contribute" page
+  features:
+    - content.code.copy
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - navigation.indexes
+    - navigation.sections
+    - navigation.path
+  palette:
+    primary: deep purple
+
+nav:
+  - Home: index.md
+  - Memory:
+      - Malloc Calloc: memory.md
+  - File System:
+      - File System: FileSystem/file_system_2.md
+  - IO Primitives:
+      - IO basics: IOprimitives/theory_IOprimitives_1.md
+  - Processes:
+      - Process ID: Processes/Process_ID.md
+  - Shell:
+      - Command Line: command_line.md
+  - Threads:
+      - PThreads: Threads/pthreads.md

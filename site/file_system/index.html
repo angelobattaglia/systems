@@ -1,0 +1,2121 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/file_system/">
+      
+      
+        <link rel="prev" href="../command_line/">
+      
+      
+        <link rel="next" href="../file_system_refined/">
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.9">
+    
+    
+      
+        <title>File system - My Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#textual-and-binary-files" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href=".." title="My Docs" class="md-header__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            My Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              File system
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href=".." class="md-tabs__link">
+        
+  
+    
+  
+  Welcome to MkDocs
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Process_ID/" class="md-tabs__link">
+        
+  
+    
+  
+  Process ID
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../command_line/" class="md-tabs__link">
+        
+  
+    
+  
+  Commands
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+  
+    <li class="md-tabs__item md-tabs__item--active">
+      <a href="./" class="md-tabs__link">
+        
+  
+    
+  
+  File system
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../file_system_refined/" class="md-tabs__link">
+        
+  
+    
+  
+  File system refined
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../pthreads/" class="md-tabs__link">
+        
+  
+    
+  
+  POSIX threads or Pthreads
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory_IOprimitives_1/" class="md-tabs__link">
+        
+  
+    
+  
+  I/O Primitives in C
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory_IOprimitives_2/" class="md-tabs__link">
+        
+  
+    
+  
+  I/O Primitives in C
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory_IOprimitives_3/" class="md-tabs__link">
+        
+  
+    
+  
+  I/O Primitives in C
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../theory_IOprimitives_4/" class="md-tabs__link">
+        
+  
+    
+  
+  POSIX system calls for File Handling
+
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href=".." title="My Docs" class="md-nav__button md-logo" aria-label="My Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    My Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href=".." class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Welcome to MkDocs
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Process_ID/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Process ID
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../command_line/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Commands
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  <span class="md-ellipsis">
+    File system
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  <span class="md-ellipsis">
+    File system
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#textual-and-binary-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textual and binary files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Textual and binary files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remark:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textual-files-or-ascii-to-give-to-chatgpt-for-better-explaination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textual files (or ASCII) (to give to chatGPT for better explaination)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-binary-files-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why are binary files used?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-binary-files-used_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why are binary files used?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Serialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-serialization-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Serialization in C
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-with-the-c-standard-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O with the C standard library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iso-c-standard-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISO C Standard Library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-and-close-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open and close a file
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open and close a file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-character-by-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O character by character
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-row-by-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O row by row
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatted-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatted I/O
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary I/O
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posix-standard-library-of-sys-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      POSIX Standard Library of sys calls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POSIX Standard Library of sys calls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-call-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call read()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-read_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call read()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call write()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-write_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call write()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-lseek" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call lseek()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-lseek_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call lseek()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-lseek_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call lseek()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-close" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call close()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-file-rw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: File R/W
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-file-rw_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example : File R/W
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../file_system_refined/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    File system refined
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../pthreads/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POSIX threads or Pthreads
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory_IOprimitives_1/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I/O Primitives in C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory_IOprimitives_2/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I/O Primitives in C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory_IOprimitives_3/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    I/O Primitives in C
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../theory_IOprimitives_4/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    POSIX system calls for File Handling
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#textual-and-binary-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textual and binary files
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Textual and binary files">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remark" class="md-nav__link">
+    <span class="md-ellipsis">
+      Remark:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#textual-files-or-ascii-to-give-to-chatgpt-for-better-explaination" class="md-nav__link">
+    <span class="md-ellipsis">
+      Textual files (or ASCII) (to give to chatGPT for better explaination)
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-files" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary Files
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-binary-files-used" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why are binary files used?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-are-binary-files-used_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Why are binary files used?
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serialization" class="md-nav__link">
+    <span class="md-ellipsis">
+      Serialization
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Serialization">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-of-serialization-in-c" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example of Serialization in C
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    <span class="md-ellipsis">
+      Notes:
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-with-the-c-standard-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O with the C standard library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iso-c-standard-library" class="md-nav__link">
+    <span class="md-ellipsis">
+      ISO C Standard Library
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#open-and-close-a-file" class="md-nav__link">
+    <span class="md-ellipsis">
+      Open and close a file
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Open and close a file">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#access-methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      Access methods
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-character-by-character" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O character by character
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#io-row-by-row" class="md-nav__link">
+    <span class="md-ellipsis">
+      I/O row by row
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formatted-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formatted I/O
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#binary-io" class="md-nav__link">
+    <span class="md-ellipsis">
+      Binary I/O
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posix-standard-library-of-sys-calls" class="md-nav__link">
+    <span class="md-ellipsis">
+      POSIX Standard Library of sys calls
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="POSIX Standard Library of sys calls">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-call-open_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call open()
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#system-call-read" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call read()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_3" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-read_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call read()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_4" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-write" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call write()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_5" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-write_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call write()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_6" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-lseek" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call lseek()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_7" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-lseek_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call lseek()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_8" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-lseek_2" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call lseek()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_9" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#system-call-close" class="md-nav__link">
+    <span class="md-ellipsis">
+      System call close()
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#include_10" class="md-nav__link">
+    <span class="md-ellipsis">
+      include
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="include">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-file-rw" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example: File R/W
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example-file-rw_1" class="md-nav__link">
+    <span class="md-ellipsis">
+      Example : File R/W
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<p>Information Storage</p>
+<p>Information is preserved over extended periods, remaining unaffected by:
+1. Program or process termination.
+2. Loss of power supply or other disruptions.
+3. Logical Perspective on Files</p>
+<p>A file is:
+1. A structured collection of related data, encompassing elements such as numbers, text, images, and more.
+2. Data stored on electronic devices using standardized encoding systems.
+3. Represented in a contiguous address space within the storage medium.</p>
+<p>ASCII encoding
+De-facto standard
+➢ ASCII, American Standard
+Code for Information Interchange
+128 total characters
+32 not printable
+96 printable
+▪ Originally based on the English alphabet
+▪ 128 characters are coded in 7-bit (binary numbers)
+➢ Extended ASCII (or high ASCII)
+▪ Extension of ASCII to 8-bit and 255 characters
+▪ Several versions exist
+● ISO 8859-1 (ISO Latin-1), ISO 8859-2 (Eastern
+European languages), ISO 8859-5 for Cyrillic
+languages, etc.</p>
+<p>Unicode encoding
+❖ Industrial standard that includes the alphabets for
+any existing writing system
+➢ It contains more 110,000 characters
+➢ It includes more than 100 sets of symbols
+❖ Several implementations exist
+➢ UCS (Universal Character Set)
+➢ UTF (Unicode Tranformation Format)
+▪ UTF-8, groups of 8 bits size (1, 2, 3 or 4 groups)
+● ASCII coded in the first 8 bits
+▪ UTF-16, groups of 16 bits size (1 or 2 groups)
+▪ UTF-32, groups of 32 bits size (fixed length)</p>
+<h2 id="textual-and-binary-files">Textual and binary files</h2>
+<p>A file is basically a sequence of bytes written one
+after the other. Each byte includes 8 bits, with possible values 0 or 1.
+As a consequence all files are binary. 
+Normally we can distinguish between:
+1. Textual files (or ASCII) (C sources, C++ sources etc..)
+2. Binary files (Executables, Word, Excel ..)</p>
+<h3 id="remark">Remark:</h3>
+<p>The UNIX/Linux kernel does not distinguish
+between binary and textual files.</p>
+<h2 id="textual-files-or-ascii-to-give-to-chatgpt-for-better-explaination">Textual files (or ASCII) (to give to chatGPT for better explaination)</h2>
+<p>❖ Files consisting of data encoded in ASCII
+➢ Sequence of 0 and 1, which (in groups of 8 bit)
+codify ASCII symbols
+❖ Textual files are usually “line-oriented”
+➢ Newline: go to the next line
+▪ UNIX/Linux and Mac OSX
+● Newline = 1 character
+● Line Feed (go to next line, LF, 10 10)
+▪ Windows
+● Newline = 2 characters
+● Line Feed (go to next line, LF, 10 10)
++ Carriage Return (go to beginning of the line, CR, 13 10)</p>
+<h2 id="binary-files">Binary Files</h2>
+<p>❖ A binary file is a sequence of 0 and 1, not “byte-oriented”, meaning it's bit by bit, not byte by byte
+❖ The smallest unit that can be read/write is the bit
+➢ Non easy the management of the single bit
+➢ They usually include every possible sequence of 8
+bits, which do not necessarily correspond to
+printable characters, new-line, etc.</p>
+<h2 id="why-are-binary-files-used">Why are binary files used?</h2>
+<p>❖ Advantages
+➢ Compactness (smaller average dimension)
+▪ Examples: Number 10000010 occupies 6 characters,
+(i.e., 6 bytes) in the Text/ASCII format, and 4 bytes
+if coded in an integer (short)
+➢ Ease of editing the file
+▪ An integer always occupies the same space
+➢ Ease of positioning on the file
+▪ Fixed record structure
+❖ Drawbacks
+➢ Limited portability
+➢ Impossibility to use a standard editor</p>
+<h2 id="why-are-binary-files-used_1">Why are binary files used?</h2>
+<p>❖ Advantages
+➢ Compactness (smaller average dimension)
+▪ Examples: Number 10000010 occupies 6 characters,
+(i.e., 6 bytes) in the Text/ASCII format, and 4 bytes
+if coded in an integer (short)
+➢ Ease of editing the file
+▪ An integer always occupies the same space
+➢ Ease of positioning on the file
+▪ Fixed record structure
+❖ Drawbacks
+➢ Limited portability
+➢ Impossibility to use a standard editor</p>
+<h2 id="serialization">Serialization</h2>
+<p><strong>Definition:</strong><br />
+Serialization is the process of converting a data structure
+(e.g., a <code>struct</code> in C) into a format that can be stored
+or transmitted and later reconstructed in its original form. </p>
+<ul>
+<li><strong>Purpose:</strong>  </li>
+<li>Allows a data structure to be stored (e.g., in a file or database)
+  or transmitted (e.g., over a network) as a single entity.  </li>
+<li>The serialized data is read and reconstructed according to the same
+  serialization format, ensuring the original structure is replicated.</li>
+</ul>
+<p><strong>Features:</strong><br />
+  - Most programming languages support serialization using read/write 
+    (R/W) operations on files. Examples include:<br />
+  - Java<br />
+  - Python<br />
+  - Objective-C<br />
+  - Ruby  </p>
+<hr />
+<h3 id="example-of-serialization-in-c"><strong>Example of Serialization in C</strong></h3>
+<p><strong>Structure Definition:</strong></p>
+<pre><code class="language-c">struct mys {
+    int id;
+    long int rn;
+    char n[L], c[L];
+    int mark;
+} s;
+</code></pre>
+<p><strong>Serialization Formats:</strong><br />
+1. <strong>Binary Serialization:</strong><br />
+   - The structure is stored as a sequence of bytes.<br />
+   - The interpretation depends on the encoding scheme (e.g., ASCII on 8 bits or Unicode on 16 bits).<br />
+   - The file size is compact but not human-readable.</p>
+<ol>
+<li><strong>Text Serialization:</strong>  </li>
+<li>Each field is stored as text, using character encoding (e.g., ASCII on 8 bits).  </li>
+<li>Example:<br />
+<code>1 100000 Romano Antonio 25</code></li>
+<li>Larger file size compared to binary serialization but more human-readable.  </li>
+</ol>
+<hr />
+<h3 id="notes"><strong>Notes:</strong></h3>
+<ul>
+<li>Serialization formats affect file size and readability:  </li>
+<li><strong>Binary formats</strong> are compact but require decoding.  </li>
+<li><strong>Text formats</strong> are larger but easy to interpret.  </li>
+<li>Incorrect encoding or decoding can result in malformed data (e.g., corrupted text with unrecognized characters).</li>
+</ul>
+<hr />
+<h2 id="io-with-the-c-standard-library">I/O with the C standard library</h2>
+<p>I/O operations with ANSI C can be performed
+through different categories of functions
+1. Character by character
+2. Row by row
+3. Formatted I/O
+4. Binary I/O
+<a href="https://www.skenz.it/cs/c_language/file_reading_1">Read examples</a>
+<a href="https://www.skenz.it/cs/c_language/file_writing_1">Write examples</a>
+<a href="https://www.skenz.it/cs/c_language/write_and_read_a_binary_file">Binary I/O examples</a></p>
+<h2 id="iso-c-standard-library">ISO C Standard Library</h2>
+<p>Standard I/O is “fully buffered”
+➢ The I/O operation is performed only when the I/O
+buffer is full
+➢ The “flush” operation indicates the actual write of
+the buffer to the I/O</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+void setbuf (FILE *fp, char *buf);
+int fflush (FILE *fp);
+</code></pre>
+<p>Standard error is never buffered.
+For concurrent processes, use:</p>
+<pre><code class="language-c">setbuf (stdout, 0);
+fflush (stdout);
+</code></pre>
+<h2 id="open-and-close-a-file">Open and close a file</h2>
+<p>Here's how to open and close a file</p>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+FILE *fopen (char *path, char *type);
+FILE *fclose (FILE *fp);
+</code></pre>
+<h3 id="access-methods">Access methods</h3>
+<ul>
+<li>r, rb, w, wb, a, ab r+, r+b, etc.</li>
+<li>The UNIX kernel does not make any difference
+between textual files (ASCII) and binary files</li>
+<li>The “b” option has no effect, e.g. “r”==“rb”, “w”==“wb”, etc.</li>
+</ul>
+<h2 id="io-character-by-character">I/O character by character</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int getc (FILE *fp);
+int fgetc (FILE *fp);
+int putc (int c, FILE *fp);
+int fputc (int c, FILE *fp);
+</code></pre>
+<p>❖ Returned values
+➢ A character on success
+➢ EOF on error, or when the end of the file is
+reached
+❖ The function
+➢ getchar is equivalent to getc (stdin)
+➢ putchar is equivalent to putc (c, stdout)</p>
+<h2 id="io-row-by-row">I/O row by row</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+char *gets (char *buf);
+char *fgets (char *buf, int n, FILE *fp);
+int puts (char *buf);
+int fputs (char *buf, FILE *fp);
+</code></pre>
+<p>❖ Returned values
+➢ buf (gets/fgets), or a non-negative value
+(puts/fputs) in the case of success
+➢ NULL (gets/fgets), or EOF for errors or when the
+end of file is reached (puts/fputs)
+❖ Lines must be delimited by "new-line"</p>
+<h2 id="formatted-io">Formatted I/O</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+int scanf (char format, ...);
+int fscanf (FILE *fp, char format, ...);
+int printf (char format, ...);
+int fprintf (FILE *fp, char format, ...);
+</code></pre>
+<p>❖ High flexibility in data manipulation
+➢ Formats (characters, integers, reals, etc.)
+➢ Conversions</p>
+<h2 id="binary-io">Binary I/O</h2>
+<pre><code class="language-c">#include &lt;stdio.h&gt;
+size_t fread (void *ptr, size_t size,
+size_t nObj, FILE *fp);
+
+size_t fwrite (void *ptr, size_t size,
+size_t nObj, FILE *fp);
+</code></pre>
+<p>Each I/O operation (single) operates on an aggregate object of specific size
+aggregate object of specific size
+all the fields of the struct
+➢ With gets/puts it is not possible, because both
+would terminate on NULL bytes or new-lines
+❖ Returned values
+➢ Number of objects written/read
+➢ If the returned value does not correspond to the ferror and feof can be parameter nObj used to distinguish 
+▪ An error has occurred between the two cases 
+▪ The end of file has been reached
+❖ Often used to manage binary files
+➢ serialized R/W (single operation for the whole struct)
+➢ Potential problems in managing different architectures
+▪ Data format compatibility (e.g., integers, reals, etc.)
+▪ Different offsets for the fields of the struct</p>
+<h2 id="posix-standard-library-of-sys-calls">POSIX Standard Library of sys calls</h2>
+<p>I/O in UNIX can be entirely performed with only 5 functions
+- open, read, write, lseek, close
+❖ This type of access
+➢ Is part of POSIX and of the Single UNIX Specification, but not of ISO C
+➢ It is normally defined with the term "unbuffered I/O", in the sense that each read or write operation corresponds to a system call</p>
+<h3 id="system-call-open">System call open()</h3>
+<p>❖ In the UNIX kernel a "file descriptor" is a non-negative integer
+❖ Conventionally (also for shells)
+➢ Standard input
+▪ 0 = STDIN_FILENO
+➢ Standard output
+▪ 1 = STDOUT_FILENO
+➢ Standard error
+▪ 2 = STDERR_FILENO
+These descriptors are defined
+in the headers file unistd.h</p>
+<h3 id="system-call-open_1">System call open()</h3>
+<h1 id="include">include <sys/types.h></h1>
+<h1 id="include_1">include <sys/stat.h></h1>
+<h1 id="include_2">include <fcntl.h></h1>
+<p>int open (const char <em>path, int flags);
+int open (const char </em>path, int flags,
+mode_t mode);
+❖ It opens a file defining the permissions
+❖ Returned values
+➢ The descriptor of the file on success
+➢ -1 on error</p>
+<h3 id="system-call-open_2">System call open()</h3>
+<p>❖ It can have 2 or 3 parameters
+➢ The mode parameter is optional
+❖ Path indicates the file to open
+❖ Flags has multiple options
+int open (
+const char *path,
+int flags,
+mode_t mode
+);
+➢ Can be obtained with the OR bit-by-bit of
+constants defined in the header file fcntl.h
+➢ One of the following three constants is mandatory
+▪ O_RDONLY
+▪ O_WRONLY
+▪ O_RDWR
+open for read-only access
+open for write-only access
+open for read-write access</p>
+<h3 id="system-call-open_3">System call open()</h3>
+<p>➢ Optional constants
+▪ O_CREAT
+▪ O_EXCL
+▪ O_TRUNC
+▪ O_APPEND
+▪ O_SYNC
+▪ ...
+int open (
+const char *path,
+int flags,
+mode_t mode
+);
+creates the files if not exist
+error if O_CREAT is set and the file
+exists
+remove the content of the file
+append to the file
+each write waits that the physical
+write operation is finished
+before continuing</p>
+<h3 id="system-call-open_4">System call open()</h3>
+<p>➢ Optional constants
+▪ O_CREAT
+▪ O_EXCL
+▪ O_TRUNC
+▪ O_APPEND
+▪ O_SYNC
+▪ ...
+int open (
+const char *path,
+int flags,
+mode_t mode
+);
+creates the files if not exist
+error if O_CREAT is set and the file
+exists
+remove the content of the file
+append to the file
+each write waits that the physical
+write operation is finished
+before continuing</p>
+<h3 id="system-call-read">System call read()</h3>
+<h1 id="include_3">include <unistd.h></h1>
+<p>int read (int fd, void *buf, size_t nbytes);
+❖ Read from file fd a number of bytes equal to
+nbytes, storing them in buf
+❖ Returned values
+➢ number of read bytes on success
+➢ -1 on error
+➢ 0 in the case of EOF</p>
+<h3 id="system-call-read_1">System call read()</h3>
+<h1 id="include_4">include <unistd.h></h1>
+<p>int read (int fd, void *buf, size_t nbytes);
+❖ The returned value is lower that nbytes
+➢ If the end of the file is reached before nbytes
+bytes have been read
+➢ If the pipe you are reading from does not contain
+nbytes bytes</p>
+<h3 id="system-call-write">System call write()</h3>
+<h1 id="include_5">include <unistd.h></h1>
+<p>int write (int fd, void *buf, size_t nbytes);
+❖ Write nbytes bytes from buf in the file identified
+by descriptor fd
+❖ Returned values
+➢ The number of written bytes in the case of
+success, i.e., normally nbytes
+➢ -1 on error</p>
+<h3 id="system-call-write_1">System call write()</h3>
+<h1 id="include_6">include <unistd.h></h1>
+<p>int write (int fd, void *buf, size_t nbytes);
+❖ Remark
+➢ write writes on the system buffer, not on the disk
+▪ fd = open (file, O_WRONLY | O_SYNC);
+➢ O_SYNC forces the sync of the buffers, but only
+for ext2 file systems</p>
+<p>Examples: File R/W
+float data[10];
+if ( write(fd, data, 10*sizeof(float))==(-1) ) {
+fprintf (stderr, "Error: Write %d).\n", n);
+}
+}
+writing of the vector data (of
+float)
+struct {
+char name[L];
+int n;
+float avg;
+} item;
+if ( write(fd,&amp;item,sizeof(item)))==(-1) ) {
+fprintf (stderr, "Error: Write %d).\n", n);
+}
+}
+Writing of the serialized struct
+item (with 3 fields)</p>
+<h3 id="system-call-lseek">System call lseek()</h3>
+<h1 id="include_7">include <unistd.h></h1>
+<p>off_t lseek (int fd, off_t offset, int whence);
+❖ The current position of the file offset is
+associated to each file
+➢ The system call lseek assigns the value offset to
+the file offset
+➢ The offset value is expressed in bytes</p>
+<h3 id="system-call-lseek_1">System call lseek()</h3>
+<h1 id="include_8">include <unistd.h></h1>
+<p>off_t lseek (int fd, off_t offset, int whence);
+❖ whence specifies the interpretation of offset
+➢ If whence==SEEK_SET
+▪ The offset is evaluated from the beginning of the file
+➢ If whence==SEEK_CUR
+▪ The offset is evaluated from the current position
+➢ If whence==SEEK_END
+▪ The offset is evaluated from the end of the file
+The value of offset
+can be positive or
+negative
+It is possible to leave
+"holes" in a file
+(filled with zeros)</p>
+<h3 id="system-call-lseek_2">System call lseek()</h3>
+<h1 id="include_9">include <unistd.h></h1>
+<p>off_t lseek (int fd, off_t offset, int whence);
+❖ Returned values
+➢ new offset on success
+➢ -1 on error</p>
+<h3 id="system-call-close">System call close()</h3>
+<h1 id="include_10">include <unistd.h></h1>
+<p>int close (int fd);
+❖ Returned values
+➢ 0 on success
+➢ -1 on error
+❖ All the open files are closed automatically when
+the process terminates</p>
+<h3 id="example-file-rw">Example: File R/W</h3>
+<pre><code class="language-c">#include &lt;sys/stat.h&gt;
+#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#define BUFFSIZE 4096
+int main(void) {
+    int nR, nW, fdR, fdW;
+    char buf[BUFFSIZE];
+    fdR = open (argv[1], O_RDONLY);
+    fdW = open (argv[2], O_WRONLY | O_CREAT | O_TRUNC,
+    S_IRUSR | S_IWUSR);
+    if ( fdR==(-1) || fdW==(-1) ) {
+        fprintf (stdout, “Error Opening a File.\n“);
+    exit (1);
+}
+</code></pre>
+<h3 id="example-file-rw_1">Example : File R/W</h3>
+<p>while ( (nR = read (fdR, buf, BUFFSIZE)) &gt; 0 ) {
+nW = write (fdW, buf, nR);
+if ( nR!=nW )
+fprintf (stderr,
+"Error: Read %d, Write %d).\n", nR, nW);
+}
+if ( nR &lt; 0 )
+fprintf (stderr, "Write Error.\n");
+close (fdR);
+close (fdW);
+exit(0);
+}
+Error check on the last
+reading operation
+This program works indifferently on text and
+binary files</p>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    <script id="__config" type="application/json">{"base": "..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../assets/javascripts/workers/search.f8cc74c7.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+    
+  </body>
+</html>
