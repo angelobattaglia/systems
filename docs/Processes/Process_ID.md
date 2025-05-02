@@ -1,6 +1,8 @@
-Certainly! Let's break down the concepts presented clearly and concisely:
+## Concurrent v. Parallel
+- Concurrent programming is about structure and management: handling multiple tasks by interleaving execution to improve responsiveness.
 
----
+- Parallel computing is about performance and speed: dividing computations to physically run them simultaneously across multiple processors.
+
 
 ### **1. UID and GID**
 
