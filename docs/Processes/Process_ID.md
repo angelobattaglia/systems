@@ -1,3 +1,12 @@
+<<<<<<< HEAD
+=======
+## Concurrent v. Parallel
+- Concurrent programming is about structure and management: handling multiple tasks by interleaving execution to improve responsiveness.
+
+- Parallel computing is about performance and speed: dividing computations to physically run them simultaneously across multiple processors.
+
+
+>>>>>>> aa6cf65bc40bb15dae103a1b6c47f9f755c71569
 ### **1. UID and GID**
 
 - **UID (User ID):** Identifies a user uniquely on a Unix/Linux system.
