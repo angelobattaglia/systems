@@ -19,6 +19,9 @@ theme:
 
 nav:
   - Home: index.md
+  - Compilation Process:
+      - Compilation: CompilationProcess/Make/Make.md
+      - Compilation: CompilationProcess/Make/MakeLatex.md
   - Memory:
       - Malloc Calloc: memory.md
   - File System:
@@ -28,6 +31,6 @@ nav:
   - Processes:
       - Process ID: Processes/Process_ID.md
   - Shell:
-      - Command Line: command_line.md
+      - Command Line: Shell/command_line.md
   - Threads:
       - PThreads: Threads/pthreads.md

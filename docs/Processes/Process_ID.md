@@ -1,7 +1,3 @@
-Certainly! Let's break down the concepts presented clearly and concisely:
-
----
-
 ### **1. UID and GID**
 
 - **UID (User ID):** Identifies a user uniquely on a Unix/Linux system.
