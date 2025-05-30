@@ -8,21 +8,23 @@
       
       
       
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/CompilationProcess/dynamiclinking/">
       
       
-      <link rel="icon" href="/OSdocs/assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>OS Docs</title>
+        <title>Dynamic Linking - OS Docs</title>
       
     
     
-      <link rel="stylesheet" href="/OSdocs/assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="/OSdocs/assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -38,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL("/OSdocs/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#dynamic-linking" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -74,7 +81,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/OSdocs/." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -93,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Dynamic Linking
             
           </span>
         </div>
@@ -152,7 +159,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/OSdocs/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -167,7 +174,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-tabs__link">
+      <a href="../Make/Make/" class="md-tabs__link">
         Compilation Process
       </a>
     </li>
@@ -183,7 +190,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/memory.md" class="md-tabs__link">
+      <a href="../../memory.md" class="md-tabs__link">
         Memory
       </a>
     </li>
@@ -199,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-tabs__link">
+      <a href="../../FileSystem/file_system_2/" class="md-tabs__link">
         File System
       </a>
     </li>
@@ -215,7 +222,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
+      <a href="../../IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
         IO Primitives
       </a>
     </li>
@@ -231,7 +238,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-tabs__link">
+      <a href="../../Processes/Process_ID/" class="md-tabs__link">
         Processes
       </a>
     </li>
@@ -247,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-tabs__link">
+      <a href="../../Shell/command_line/" class="md-tabs__link">
         Shell
       </a>
     </li>
@@ -263,7 +270,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-tabs__link">
+      <a href="../../Threads/pthreads/" class="md-tabs__link">
         Threads
       </a>
     </li>
@@ -297,7 +304,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/OSdocs/." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -316,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -364,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-nav__link">
+      <a href="../Make/Make/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -378,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/MakeLatex/" class="md-nav__link">
+      <a href="../Make/MakeLatex/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -431,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/memory.md" class="md-nav__link">
+      <a href="../../memory.md" class="md-nav__link">
         Malloc Calloc
       </a>
     </li>
@@ -484,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-nav__link">
+      <a href="../../FileSystem/file_system_2/" class="md-nav__link">
         File System
       </a>
     </li>
@@ -537,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
+      <a href="../../IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
         IO basics
       </a>
     </li>
@@ -590,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-nav__link">
+      <a href="../../Processes/Process_ID/" class="md-nav__link">
         Process ID
       </a>
     </li>
@@ -643,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-nav__link">
+      <a href="../../Shell/command_line/" class="md-nav__link">
         Command Line
       </a>
     </li>
@@ -696,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-nav__link">
+      <a href="../../Threads/pthreads/" class="md-nav__link">
         PThreads
       </a>
     </li>
@@ -727,6 +734,8 @@
   
   
   
+    
+  
   
 </nav>
                   </div>
@@ -738,8 +747,166 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="dynamic-linking">Dynamic Linking</h1>
+<ul>
+<li>First step: compile Script02.c into Script02.o, -fPIC compile to Position Independent Code Script02.o</li>
+</ul>
+<pre><code>gcc -c -fPIC Script02.c
+</code></pre>
+<ul>
+<li>Second step: create a shared (-shared) Dinamically Linked Library (.so) with Script02.o as a member of it</li>
+</ul>
+<pre><code>gcc -shared -o libmylib.so Script02.o
+</code></pre>
+<ul>
+<li>Third step: Static compile-link Script01.c with libmylib.a as a linked library</li>
+<li>'-L.' specifies the library path (current directory . or you can specify it)</li>
+<li>'-l' specifies the library as seen next</li>
+<li>'-lmylib' is specified without the prefex lib, as well as the suffix .a</li>
+</ul>
+<pre><code>gcc Script01.c -L. -lmylib
+</code></pre>
+<p>After installation, you need to add the CUDA binaries to your system's PATH and library paths. You can do this by adding the following lines to your <code>~/.bashrc</code> or <code>~/.profile</code> file:</p>
+<pre><code class="language-bash"># Add CUDA to PATH
+export PATH=/usr/local/cuda/bin:$PATH
+# Add CUDA libraries to LD_LIBRARY_PATH
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64:$LD_LIBRARY_PATH
+</code></pre>
+<p>After adding these lines, reload your shell configuration:</p>
+<pre><code class="language-bash">source ~/.bashrc
+</code></pre>
+<ul>
+<li>Third-2 step: exporting the LD_LIBRARY = ./</li>
+<li>If the library is not in the curent directory set LD_LIBRARY_PATH to point to the directory containing the library</li>
+</ul>
+<pre><code>export LD_LIBRARY_PATH = ./
+</code></pre>
+<ul>
+<li>Fourth step: run the result, i.e. a.out, as usual</li>
+</ul>
+<pre><code>./a.out
+</code></pre>
+<h1 id="dynamic-linking_1">Dynamic Linking</h1>
+<ul>
+<li><strong>Dynamic Linking</strong> is more efficient in terms of disk space and memory, and it offers flexibility with library updates, but it introduces dependencies on external libraries and potential compatibility issues. 
+This is a high-level overview, and there are more nuances, especially when you get into topics like dynamically loaded libraries (using <code>dlopen</code> and <code>dlsym</code> in C/C++), which allow for even more dynamic behavior.</li>
+</ul>
+<p>Dynamic linking involves keeping the code of libraries separate from the executable. 
+The linking happens at runtime, where the executable file contains references to the library functions it uses.</p>
+<ol>
+<li><strong>How it Works</strong>:</li>
+<li>Dynamic libraries in Linux are typically <code>.so</code> (shared object) files.</li>
+<li>When you compile your program, the compiler leaves placeholders for the addresses of the functions from the library.</li>
+<li>
+<p>At runtime, the Linux loader (<code>ld.so</code>) fills in these placeholders with actual addresses of the library functions, which are loaded into memory.</p>
+</li>
+<li>
+<p><strong>Advantages</strong>:</p>
+</li>
+<li><strong>Reduced Size</strong>: Executables are smaller as they don't contain the actual library code.</li>
+<li><strong>Shared Libraries</strong>: Multiple programs can share the same library code in memory, reducing overall memory usage.</li>
+<li>
+<p><strong>Easy Updates</strong>: Updating a library does not require recompiling the programs using it.</p>
+</li>
+<li>
+<p><strong>Disadvantages</strong>:</p>
+</li>
+<li><strong>Dependency</strong>: Executables depend on external libraries being present on the system.</li>
+<li><strong>Compatibility</strong>: Issues can arise if the wrong version of a library is used at runtime.</li>
+<li><strong>Startup Time</strong>: Slightly longer startup times for programs as linking is done at runtime.</li>
+</ol>
+<h3 id="2-library-dependencies">2. Library Dependencies</h3>
+<p>When you compile a binary, it often relies on shared libraries (dynamic libraries) that need to be present on the system for it to run. If these libraries are not found in the expected locations, the binary will fail to execute.</p>
+<ul>
+<li>
+<p><strong>Checking Dependencies with <code>ldd</code></strong>:
+  The <code>ldd</code> command prints the shared libraries required by a binary. For example:
+  <code>sh
+  ldd /usr/bin/your_binary</code>
+  This command will output something like:
+  <code>linux-vdso.so.1 (0x00007ffd5ed9e000)
+  libm.so.6 =&gt; /lib/x86_64-linux-gnu/libm.so.6 (0x00007fbd5e144000)
+  libc.so.6 =&gt; /lib/x86_64-linux-gnu/libc.so.6 (0x00007fbd5dd7b000)
+  /lib64/ld-linux-x86-64.so.2 (0x00007fbd5e443000)</code>
+  If any libraries are marked as "not found," you need to install those libraries or make sure they are in the correct path.</p>
+</li>
+<li>
+<p><strong>Setting the Library Path</strong>:
+  If the libraries are installed in non-standard locations, you can set the <code>LD_LIBRARY_PATH</code> environment variable to include the paths where the libraries are located:
+  <code>sh
+  export LD_LIBRARY_PATH=/path/to/custom/libs:$LD_LIBRARY_PATH</code>
+  You can add this line to your <code>.bashrc</code> or <code>.profile</code> to make it persistent.</p>
+</li>
+<li>
+<p><strong>Using <code>ldconfig</code></strong>:
+  You can add the library path to <code>/etc/ld.so.conf</code> and run <code>ldconfig</code> to update the linker cache:
+  <code>sh
+  echo "/path/to/custom/libs" | sudo tee -a /etc/ld.so.conf
+  sudo ldconfig</code></p>
+</li>
+</ul>
+<h3 id="5-environment-variables">5. Environment Variables</h3>
+<p>Environment variables can significantly affect how a binary runs. These variables provide configuration and setup information that the binary might depend on.</p>
+<ul>
+<li>
+<p><strong>Common Environment Variables</strong>:
+  Some binaries might rely on variables like <code>PATH</code>, <code>LD_LIBRARY_PATH</code>, <code>PYTHONPATH</code>, <code>JAVA_HOME</code>, etc. Make sure these are set correctly:
+  <code>sh
+  export PATH=/usr/bin:$PATH
+  export LD_LIBRARY_PATH=/usr/lib:$LD_LIBRARY_PATH</code></p>
+</li>
+<li>
+<p><strong>Checking and Setting Variables</strong>:
+  You can check the current value of an environment variable using <code>echo</code>:
+  <code>sh
+  echo $VARIABLE_NAME</code>
+  To set an environment variable for the current session:
+  <code>sh
+  export VARIABLE_NAME=value</code></p>
+</li>
+<li>
+<p><strong>Persistent Settings</strong>:
+  To make these changes persistent, add them to your shell’s configuration file (e.g., <code>.bashrc</code>, <code>.bash_profile</code>, or <code>.profile</code>):
+  <code>sh
+  echo 'export VARIABLE_NAME=value' &gt;&gt; ~/.bashrc
+  source ~/.bashrc</code></p>
+</li>
+</ul>
+<h3 id="6-file-system-differences">6. File System Differences</h3>
+<p>Moving files between different file systems or partitions can sometimes cause issues, although this is less common with modern systems. Here are some considerations:</p>
+<ul>
+<li>
+<p><strong>File System Types</strong>:
+  Different file systems (e.g., ext4, NTFS, FAT32) have different capabilities and restrictions. For instance, file permissions and ownership might not be preserved when moving files between file systems with different permission models.</p>
+</li>
+<li>
+<p><strong>Mount Options</strong>:
+  The options used when mounting a file system can affect file execution. For example, the <code>noexec</code> option prevents execution of binaries on the mounted file system:
+  <code>sh
+  mount | grep /usr/bin</code>
+  Ensure that <code>/usr/bin</code> is not mounted with <code>noexec</code>.</p>
+</li>
+<li>
+<p><strong>Inodes and File Metadata</strong>:
+  Some file systems handle file metadata differently. If the binary relies on specific metadata that’s not preserved during the move, it might not run correctly. This is rare but can happen in specialized use cases.</p>
+</li>
+<li>
+<p><strong>Consistency and Corruption</strong>:
+  Ensure the file system is consistent and not corrupted. Use tools like <code>fsck</code> to check and repair file system issues:
+  <code>sh
+  sudo fsck -f /dev/sdXn  # Replace /dev/sdXn with your actual device identifier</code></p>
+</li>
+</ul>
+<p>By examining these factors—library dependencies, environment variables, and file system differences—you can identify and resolve issues that prevent your binary from executing correctly after being moved.</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -771,10 +938,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/OSdocs/", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "/OSdocs/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/OSdocs/assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>

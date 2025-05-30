@@ -8,21 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/FileSystem/file_system_2/">
       
       
-      <link rel="icon" href="/OSdocs/assets/images/favicon.png">
+        <link rel="prev" href="../../CompilationProcess/Make/MakeLatex/">
+      
+      
+        <link rel="next" href="../../IOprimitives/theory_IOprimitives_1/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>OS Docs</title>
+        <title>File System - OS Docs</title>
       
     
     
-      <link rel="stylesheet" href="/OSdocs/assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="/OSdocs/assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -38,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("/OSdocs/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#file-system-overview" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -74,7 +85,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/OSdocs/." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -93,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              File System
             
           </span>
         </div>
@@ -152,7 +163,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/OSdocs/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -167,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-tabs__link">
+      <a href="../../CompilationProcess/Make/Make/" class="md-tabs__link">
         Compilation Process
       </a>
     </li>
@@ -183,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/memory.md" class="md-tabs__link">
+      <a href="../../memory.md" class="md-tabs__link">
         Memory
       </a>
     </li>
@@ -193,13 +204,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         File System
       </a>
     </li>
@@ -215,7 +228,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
+      <a href="../../IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
         IO Primitives
       </a>
     </li>
@@ -231,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-tabs__link">
+      <a href="../../Processes/Process_ID/" class="md-tabs__link">
         Processes
       </a>
     </li>
@@ -247,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-tabs__link">
+      <a href="../../Shell/command_line/" class="md-tabs__link">
         Shell
       </a>
     </li>
@@ -263,7 +276,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-tabs__link">
+      <a href="../../Threads/pthreads/" class="md-tabs__link">
         Threads
       </a>
     </li>
@@ -297,7 +310,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/OSdocs/." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -316,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -364,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-nav__link">
+      <a href="../../CompilationProcess/Make/Make/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -378,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/MakeLatex/" class="md-nav__link">
+      <a href="../../CompilationProcess/Make/MakeLatex/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -431,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/memory.md" class="md-nav__link">
+      <a href="../../memory.md" class="md-nav__link">
         Malloc Calloc
       </a>
     </li>
@@ -451,14 +464,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" checked>
       
       
         
@@ -471,7 +486,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_4">
           <span class="md-nav__icon md-icon"></span>
           File System
@@ -482,11 +497,104 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          File System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         File System
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-system-overview" class="md-nav__link">
+    File System Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-in-linux" class="md-nav__link">
+    Files in Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding-systems" class="md-nav__link">
+    Encoding Systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-types" class="md-nav__link">
+    File Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serialization" class="md-nav__link">
+    Serialization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iso-c-standard-library-for-io" class="md-nav__link">
+    ISO C Standard Library for I/O
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-access-and-operations" class="md-nav__link">
+    File Access and Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posix-standard-library-unbuffered-io" class="md-nav__link">
+    POSIX Standard Library (Unbuffered I/O)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -537,7 +645,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
+      <a href="../../IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
         IO basics
       </a>
     </li>
@@ -590,7 +698,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-nav__link">
+      <a href="../../Processes/Process_ID/" class="md-nav__link">
         Process ID
       </a>
     </li>
@@ -643,7 +751,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-nav__link">
+      <a href="../../Shell/command_line/" class="md-nav__link">
         Command Line
       </a>
     </li>
@@ -696,7 +804,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-nav__link">
+      <a href="../../Threads/pthreads/" class="md-nav__link">
         PThreads
       </a>
     </li>
@@ -728,6 +836,77 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#file-system-overview" class="md-nav__link">
+    File System Overview
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#files-in-linux" class="md-nav__link">
+    Files in Linux
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#encoding-systems" class="md-nav__link">
+    Encoding Systems
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-types" class="md-nav__link">
+    File Types
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serialization" class="md-nav__link">
+    Serialization
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#iso-c-standard-library-for-io" class="md-nav__link">
+    ISO C Standard Library for I/O
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#file-access-and-operations" class="md-nav__link">
+    File Access and Operations
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#posix-standard-library-unbuffered-io" class="md-nav__link">
+    POSIX Standard Library (Unbuffered I/O)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example-usage" class="md-nav__link">
+    Example Usage
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -738,8 +917,100 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  <h1>File System</h1>
+
+<h3 id="file-system-overview">File System Overview</h3>
+<p>The file system is a critical component of an Operating System (OS) providing mechanisms for permanent data storage, managing files, directories, and disk partitions.</p>
+<h3 id="files-in-linux">Files in Linux</h3>
+<p>Files store information independently from running programs and power supply interruptions. Conceptually, files represent logically correlated information stored as contiguous address space, encoded electronically.</p>
+<h3 id="encoding-systems">Encoding Systems</h3>
+<ul>
+<li><strong>ASCII Encoding</strong>:</li>
+<li>A widely adopted standard using 7-bit binary to represent 128 characters, initially based on the English alphabet.</li>
+<li>
+<p>Extended ASCII expands to 8-bit, allowing for 255 characters including ISO standards like ISO 8859-1 (Latin-1).</p>
+</li>
+<li>
+<p><strong>Unicode Encoding</strong>:</p>
+</li>
+<li>Supports over 110,000 characters covering virtually all existing writing systems.</li>
+<li>Common implementations: UCS, UTF-8 (most used, with variable-length encoding), UTF-16, and UTF-32.</li>
+</ul>
+<h3 id="file-types">File Types</h3>
+<ul>
+<li><strong>Textual Files (ASCII)</strong>:</li>
+<li>Sequence of bytes readable by standard text editors.</li>
+<li>
+<p>Line-oriented, differing in newline representation between UNIX/Linux/Mac OSX (<code>LF</code>) and Windows (<code>CR</code> + <code>LF</code>).</p>
+</li>
+<li>
+<p><strong>Binary Files</strong>:</p>
+</li>
+<li>Sequences of bits without line or character-oriented restrictions.</li>
+<li>Advantages include compactness, ease of editing, and fixed structure.</li>
+<li>Disadvantages include limited portability and editing difficulties.</li>
+</ul>
+<h3 id="serialization">Serialization</h3>
+<p>Serialization converts structured data (e.g., C structures) into a storable format. It's crucial for consistent reading, writing, and network transmission.</p>
+<h3 id="iso-c-standard-library-for-io">ISO C Standard Library for I/O</h3>
+<p>I/O in ANSI C provides different methods:</p>
+<ul>
+<li><strong>Character by Character</strong>: <code>getc()</code>, <code>fgetc()</code>, <code>putc()</code>, <code>fputc()</code></li>
+<li><strong>Row by Row</strong>: <code>gets()</code>, <code>fgets()</code>, <code>puts()</code>, <code>fputs()</code></li>
+<li><strong>Formatted I/O</strong>: <code>scanf()</code>, <code>fscanf()</code>, <code>printf()</code>, <code>fprintf()</code></li>
+<li><strong>Binary I/O</strong>: <code>fread()</code>, <code>fwrite()</code> for serialized data storage and retrieval, common for binary files.</li>
+</ul>
+<p>Buffered I/O operations store data temporarily and flush it to disk periodically or explicitly (<code>fflush()</code>).</p>
+<h3 id="file-access-and-operations">File Access and Operations</h3>
+<ul>
+<li><strong>Opening and Closing Files</strong>:</li>
+<li>Using <code>fopen()</code> and <code>fclose()</code>, files can be accessed with modes such as read (<code>r</code>), write (<code>w</code>), append (<code>a</code>).</li>
+<li>In UNIX/Linux, there's no functional difference between text (<code>"r"</code>) and binary (<code>"rb"</code>) modes.</li>
+</ul>
+<h3 id="posix-standard-library-unbuffered-io">POSIX Standard Library (Unbuffered I/O)</h3>
+<p>Unbuffered I/O involves direct system calls with immediate effect, using mainly five operations:</p>
+<ul>
+<li><strong><code>open()</code></strong>:</li>
+<li>Opens or creates files, specifying access modes (e.g., <code>O_RDONLY</code>, <code>O_WRONLY</code>, <code>O_RDWR</code>).</li>
+<li>
+<p>Optional flags include creation (<code>O_CREAT</code>), truncation (<code>O_TRUNC</code>), synchronization (<code>O_SYNC</code>), and permission settings (<code>S_IRUSR</code>, <code>S_IWUSR</code>).</p>
+</li>
+<li>
+<p><strong><code>read()</code></strong>:</p>
+</li>
+<li>
+<p>Reads a specified number of bytes from files, returning the actual bytes read or zero at EOF.</p>
+</li>
+<li>
+<p><strong><code>write()</code></strong>:</p>
+</li>
+<li>
+<p>Writes bytes to files, returning bytes written; can synchronize immediately with <code>O_SYNC</code>.</p>
+</li>
+<li>
+<p><strong><code>lseek()</code></strong>:</p>
+</li>
+<li>
+<p>Adjusts the current offset within a file, supporting positioning relative to start (<code>SEEK_SET</code>), current position (<code>SEEK_CUR</code>), or end (<code>SEEK_END</code>). Can create sparse files.</p>
+</li>
+<li>
+<p><strong><code>close()</code></strong>:</p>
+</li>
+<li>Releases file descriptors; occurs automatically at program termination.</li>
+</ul>
+<h3 id="example-usage">Example Usage</h3>
+<p>Provided examples demonstrate typical use cases of file reading/writing in C, handling both textual and binary files, with careful error checking and system calls implementation.</p>
+<hr />
+<p>This overview captures the essence and comprehensive details of managing files in a UNIX/Linux environment, emphasizing both the logical structure and practical usage through standardized functions and system calls.</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -771,10 +1042,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/OSdocs/", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "/OSdocs/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/OSdocs/assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>

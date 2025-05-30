@@ -8,21 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/IOprimitives/theory_IOprimitives_1/">
       
       
-      <link rel="icon" href="/OSdocs/assets/images/favicon.png">
+        <link rel="prev" href="../../FileSystem/file_system_2/">
+      
+      
+        <link rel="next" href="../../Processes/Process_ID/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>OS Docs</title>
+        <title>IO basics - OS Docs</title>
       
     
     
-      <link rel="stylesheet" href="/OSdocs/assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="/OSdocs/assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -38,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("/OSdocs/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#io-primitives-in-c-part-i" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -74,7 +85,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/OSdocs/." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -93,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              IO basics
             
           </span>
         </div>
@@ -152,7 +163,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/OSdocs/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -167,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-tabs__link">
+      <a href="../../CompilationProcess/Make/Make/" class="md-tabs__link">
         Compilation Process
       </a>
     </li>
@@ -183,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/memory.md" class="md-tabs__link">
+      <a href="../../memory.md" class="md-tabs__link">
         Memory
       </a>
     </li>
@@ -199,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-tabs__link">
+      <a href="../../FileSystem/file_system_2/" class="md-tabs__link">
         File System
       </a>
     </li>
@@ -209,13 +220,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         IO Primitives
       </a>
     </li>
@@ -231,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-tabs__link">
+      <a href="../../Processes/Process_ID/" class="md-tabs__link">
         Processes
       </a>
     </li>
@@ -247,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-tabs__link">
+      <a href="../../Shell/command_line/" class="md-tabs__link">
         Shell
       </a>
     </li>
@@ -263,7 +276,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-tabs__link">
+      <a href="../../Threads/pthreads/" class="md-tabs__link">
         Threads
       </a>
     </li>
@@ -297,7 +310,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/OSdocs/." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -316,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -364,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-nav__link">
+      <a href="../../CompilationProcess/Make/Make/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -378,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/MakeLatex/" class="md-nav__link">
+      <a href="../../CompilationProcess/Make/MakeLatex/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -431,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/memory.md" class="md-nav__link">
+      <a href="../../memory.md" class="md-nav__link">
         Malloc Calloc
       </a>
     </li>
@@ -484,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-nav__link">
+      <a href="../../FileSystem/file_system_2/" class="md-nav__link">
         File System
       </a>
     </li>
@@ -504,14 +517,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
       
       
         
@@ -524,7 +539,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_5">
           <span class="md-nav__icon md-icon"></span>
           IO Primitives
@@ -535,11 +550,107 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          IO basics
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         IO basics
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accepting-cli-arguments" class="md-nav__link">
+    Accepting CLI arguments:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#char-vectors" class="md-nav__link">
+    Char vectors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buffers" class="md-nav__link">
+    Buffer(s)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-on-the-io-primitives" class="md-nav__link">
+    Overview on the I/O primitives
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview on the I/O primitives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-their-uses" class="md-nav__link">
+    Comparison of Their Uses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-which" class="md-nav__link">
+    When to Use Which
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprintf" class="md-nav__link">
+    sprintf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-file-using-fscanf" class="md-nav__link">
+    Reading a file using fscanf
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -590,7 +701,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-nav__link">
+      <a href="../../Processes/Process_ID/" class="md-nav__link">
         Process ID
       </a>
     </li>
@@ -643,7 +754,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-nav__link">
+      <a href="../../Shell/command_line/" class="md-nav__link">
         Command Line
       </a>
     </li>
@@ -696,7 +807,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-nav__link">
+      <a href="../../Threads/pthreads/" class="md-nav__link">
         PThreads
       </a>
     </li>
@@ -727,6 +838,78 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#accepting-cli-arguments" class="md-nav__link">
+    Accepting CLI arguments:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#char-vectors" class="md-nav__link">
+    Char vectors
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#buffers" class="md-nav__link">
+    Buffer(s)
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#overview-on-the-io-primitives" class="md-nav__link">
+    Overview on the I/O primitives
+  </a>
+  
+    <nav class="md-nav" aria-label="Overview on the I/O primitives">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#comparison-of-their-uses" class="md-nav__link">
+    Comparison of Their Uses
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#when-to-use-which" class="md-nav__link">
+    When to Use Which
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#sprintf" class="md-nav__link">
+    sprintf
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#reading-a-file-using-fscanf" class="md-nav__link">
+    Reading a file using fscanf
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -738,8 +921,114 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="io-primitives-in-c-part-i">I/O Primitives in C, part I</h1>
+<h2 id="accepting-cli-arguments">Accepting CLI arguments:</h2>
+<pre><code class="language-c">int main(int argc, char ** argv){
+    // in the code, to call them: argv[1], argv[2] ...
+    // argv[0] is the name of the executable itself, say, &quot;a.out&quot;
+    // so it goes: ./a.out argument1 argument2 ..
+}
+</code></pre>
+<h2 id="char-vectors">Char vectors</h2>
+<p>1 char = 1 byte</p>
+<pre><code class="language-c">char name[1024];
+</code></pre>
+<p>Strings in C end in a NULL element. So the maximum
+number that can be contained in a [1024] vector of
+char is 1023 char, plus the NULL element "\0".</p>
+<p>[1024] is the contiguos number of char allocated on the stack.</p>
+<h2 id="buffers">Buffer(s)</h2>
+<p>A buffer is a temporary storage space used to read files,
+to perform I/O operations or to manipulate data.</p>
+<h2 id="overview-on-the-io-primitives">Overview on the I/O primitives</h2>
+<p>These are standard ANSI C I/O functions for file operations</p>
+<h3 id="comparison-of-their-uses"><strong>Comparison of Their Uses</strong></h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Purpose</th>
+<th>Level of Operation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>fgetc</strong></td>
+<td>Read a single character</td>
+<td>Character-based</td>
+</tr>
+<tr>
+<td><strong>fputc</strong></td>
+<td>Write a single character</td>
+<td>Character-based</td>
+</tr>
+<tr>
+<td><strong>fscanf</strong></td>
+<td>Read formatted data</td>
+<td>Formatted input</td>
+</tr>
+<tr>
+<td><strong>fprintf</strong></td>
+<td>Write formatted data</td>
+<td>Formatted output</td>
+</tr>
+<tr>
+<td><strong>fgets</strong></td>
+<td>Read a string/line</td>
+<td>Line or string-based</td>
+</tr>
+<tr>
+<td><strong>fputs</strong></td>
+<td>Write a string/line</td>
+<td>Line or string-based</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="when-to-use-which"><strong>When to Use Which</strong></h3>
+<ul>
+<li><strong><code>fgetc</code> and <code>fputc</code></strong>:</li>
+<li>
+<p>Use when you need to process files character by character, such as counting
+   characters or detecting specific ones.</p>
+</li>
+<li>
+<p><strong><code>fscanf</code> and <code>fprintf</code></strong>:</p>
+</li>
+<li>
+<p>Use when working with structured data where formatting matters (e.g., reading
+   integers, floats, or a mix of types from a file).</p>
+</li>
+<li>
+<p><strong><code>fgets</code> and <code>fputs</code></strong>:</p>
+</li>
+<li>Use when working with text files line-by-line or dealing with strings.</li>
+</ul>
+<h2 id="sprintf"><code>sprintf</code></h2>
+<p>The function <code>sprintf</code> writes formatted (by you) data to a string, instead of
+standard output, like <code>printf</code> does.</p>
+<pre><code class="language-c">char name[1024];
+
+sprintf(name, &quot;%s.1&quot;, argv[2]);
+</code></pre>
+<p>say argv[2] is <code>test</code>, then it writes onto name the string: <code>test.1</code></p>
+<h2 id="reading-a-file-using-fscanf">Reading a file using <code>fscanf</code></h2>
+<pre><code class="language-c">FILE *destination, *source;
+char c;
+
+while(fscanf(source, &quot;%c&quot;, &amp;c) != EOF){
+    fprintf(destination, &quot;%c&quot;, c);
+}
+</code></pre>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -771,10 +1060,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/OSdocs/", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "/OSdocs/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/OSdocs/assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>

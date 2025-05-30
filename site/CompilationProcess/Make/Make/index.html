@@ -8,21 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/CompilationProcess/Make/Make/">
       
       
-      <link rel="icon" href="/OSdocs/assets/images/favicon.png">
+        <link rel="prev" href="../../..">
+      
+      
+        <link rel="next" href="../MakeLatex/">
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>OS Docs</title>
+        <title>Compilation - OS Docs</title>
       
     
     
-      <link rel="stylesheet" href="/OSdocs/assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="/OSdocs/assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -38,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("/OSdocs/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#make" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -74,7 +85,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/OSdocs/." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../../.." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -93,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Compilation
             
           </span>
         </div>
@@ -152,7 +163,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/OSdocs/." class="md-tabs__link">
+    <a href="../../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -161,13 +172,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Compilation Process
       </a>
     </li>
@@ -183,7 +196,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/memory.md" class="md-tabs__link">
+      <a href="../../../memory.md" class="md-tabs__link">
         Memory
       </a>
     </li>
@@ -199,7 +212,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-tabs__link">
+      <a href="../../../FileSystem/file_system_2/" class="md-tabs__link">
         File System
       </a>
     </li>
@@ -215,7 +228,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
+      <a href="../../../IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
         IO Primitives
       </a>
     </li>
@@ -231,7 +244,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-tabs__link">
+      <a href="../../../Processes/Process_ID/" class="md-tabs__link">
         Processes
       </a>
     </li>
@@ -247,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-tabs__link">
+      <a href="../../../Shell/command_line/" class="md-tabs__link">
         Shell
       </a>
     </li>
@@ -263,7 +276,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-tabs__link">
+      <a href="../../../Threads/pthreads/" class="md-tabs__link">
         Threads
       </a>
     </li>
@@ -297,7 +310,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/OSdocs/." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../../.." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -316,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/." class="md-nav__link">
+      <a href="../../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -329,14 +342,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
       
       
         
@@ -351,7 +366,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_2">
           <span class="md-nav__icon md-icon"></span>
           Compilation Process
@@ -362,11 +377,122 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Compilation
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Compilation
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-cmake-if-you-need-it" class="md-nav__link">
+    Install cmake if you need it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-phony-and-how-to-use-it" class="md-nav__link">
+    What is .PHONY and how to use it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-it" class="md-nav__link">
+    Why use it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-fix-it" class="md-nav__link">
+    How to fix it:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-happen" class="md-nav__link">
+    🧠 Why does this happen?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-phony-exists" class="md-nav__link">
+    🛠 Why .PHONY exists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    ⚙️ Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#big-idea" class="md-nav__link">
+    🧩 Big idea:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-phony-targets" class="md-nav__link">
+    ✅ Common .PHONY Targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    🧾 Example
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -378,7 +504,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/MakeLatex/" class="md-nav__link">
+      <a href="../MakeLatex/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -431,7 +557,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/memory.md" class="md-nav__link">
+      <a href="../../../memory.md" class="md-nav__link">
         Malloc Calloc
       </a>
     </li>
@@ -484,7 +610,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-nav__link">
+      <a href="../../../FileSystem/file_system_2/" class="md-nav__link">
         File System
       </a>
     </li>
@@ -537,7 +663,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
+      <a href="../../../IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
         IO basics
       </a>
     </li>
@@ -590,7 +716,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-nav__link">
+      <a href="../../../Processes/Process_ID/" class="md-nav__link">
         Process ID
       </a>
     </li>
@@ -643,7 +769,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-nav__link">
+      <a href="../../../Shell/command_line/" class="md-nav__link">
         Command Line
       </a>
     </li>
@@ -696,7 +822,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-nav__link">
+      <a href="../../../Threads/pthreads/" class="md-nav__link">
         PThreads
       </a>
     </li>
@@ -727,6 +853,93 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#install-cmake-if-you-need-it" class="md-nav__link">
+    Install cmake if you need it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-phony-and-how-to-use-it" class="md-nav__link">
+    What is .PHONY and how to use it
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-use-it" class="md-nav__link">
+    Why use it?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#how-to-fix-it" class="md-nav__link">
+    How to fix it:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary" class="md-nav__link">
+    Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-does-this-happen" class="md-nav__link">
+    🧠 Why does this happen?
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#why-phony-exists" class="md-nav__link">
+    🛠 Why .PHONY exists
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#summary_1" class="md-nav__link">
+    ⚙️ Summary
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#big-idea" class="md-nav__link">
+    🧩 Big idea:
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-phony-targets" class="md-nav__link">
+    ✅ Common .PHONY Targets
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    🧾 Example
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -738,8 +951,193 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="make">Make</h1>
+<p>The mechanics of programming usually follow a fairly simple routine of editing source files, compiling the source
+into an executable form, and debugging the result. The make program is intended to automate the mundane aspects of
+transforming source code into an executable. The advantages of make over scripts is that you can specify the relationships
+between the elements of your program to make, and it knows through these relationships and timestamps exactly what
+steps need to be redone to produce the desired program each time. Using this information, make can also optimize the
+build process avoiding unnecessary steps. 
+<a href="https://www.oreilly.com/openbook/make3/book/">O'Reilly Managing Projects with GNU Make, Third Edition By Robert Mecklenburg November 2004</a></p>
+<h3 id="install-cmake-if-you-need-it">Install <code>cmake</code> if you need it</h3>
+<p>If you need <code>cmake</code> just install it</p>
+<pre><code class="language-text">Install CMake using pip3 and link it for system-wide access:
+
+pip3 install cmake==3.31.6
+sudo ln -sf /usr/local/bin/cmake /usr/bin/cmake
+cmake --version
+</code></pre>
+<h3 id="what-is-phony-and-how-to-use-it">What is <code>.PHONY</code> and how to use it</h3>
+<p><code>.PHONY</code> tells <code>make</code>:</p>
+<blockquote>
+<p>"This target is <strong>not a real file</strong>. It's just a <strong>name for a command</strong> I want to run."</p>
+</blockquote>
+<hr />
+<h3 id="why-use-it">Why use it?</h3>
+<p>https://www.skenz.it/cs/makefile_1
+Target listed after the keyword “.PHONY” are executed regardless the existence of a file with the same name that
+has been edited more recently than the dependencies.</p>
+<p>Imagine you have this in your Makefile:</p>
+<pre><code class="language-make">clean:
+    rm -f *.o prog
+</code></pre>
+<p>If a <strong>file named <code>clean</code></strong> exists in your folder, <code>make</code> will say:</p>
+<blockquote>
+<p>"clean already exists — nothing to do."</p>
+</blockquote>
+<p>😬 The command won't run!</p>
+<h3 id="how-to-fix-it">How to fix it:</h3>
+<pre><code class="language-make">.PHONY: clean
+
+clean:
+    rm -f *.o prog
+</code></pre>
+<p>Now, even if a file called <code>clean</code> exists, <code>make clean</code> will <strong>still run</strong>.</p>
+<h3 id="summary">Summary</h3>
+<ul>
+<li><code>.PHONY</code> is for targets that are <strong>not files</strong>.</li>
+<li>It <strong>forces make to always run them</strong>.</li>
+<li>Common examples: <code>clean</code>, <code>all</code>, <code>install</code>, <code>test</code>.</li>
+</ul>
+<p><strong>Make doesn’t know whether a target is a command or a file — it assumes every target might be a file.</strong></p>
+<h3 id="why-does-this-happen">🧠 Why does this happen?</h3>
+<p><code>make</code> was designed to <strong>build files</strong>. That’s its original purpose. So by default:</p>
+<ul>
+<li>If you write:</li>
+</ul>
+<p><code>make
+  clean:
+    rm -f *.o</code></p>
+<p><code>make</code> assumes <code>clean</code> might be a file you're trying to create.
+* If a file named <code>clean</code> exists in your directory, <code>make</code> will say:</p>
+<blockquote>
+<p>"<code>clean</code> is up-to-date — skip the recipe."</p>
+</blockquote>
+<p>So <code>make</code> skips the command entirely, thinking the "target" (<code>clean</code>) is already "built".</p>
+<hr />
+<h3 id="why-phony-exists">🛠 Why <code>.PHONY</code> exists</h3>
+<p><code>.PHONY</code> <strong>tells make:</strong></p>
+<blockquote>
+<p>"Hey, don’t treat this as a file — this is a fake target. Always run it."</p>
+</blockquote>
+<p>That’s why you do this:</p>
+<pre><code class="language-make">.PHONY: clean
+clean:
+    rm -f *.o prog
+</code></pre>
+<p>Now, <code>make</code> won’t care if there’s a file called <code>clean</code> — it will always run the <code>clean:</code> recipe.</p>
+<hr />
+<h3 id="summary_1">⚙️ Summary</h3>
+<table>
+<thead>
+<tr>
+<th>Without <code>.PHONY</code></th>
+<th>With <code>.PHONY</code></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>make</code> checks if target exists as a file</td>
+<td><code>make</code> skips file checks</td>
+</tr>
+<tr>
+<td>Might skip your recipe</td>
+<td>Always runs your recipe</td>
+</tr>
+<tr>
+<td>Confusing when debugging</td>
+<td>Predictable and safe</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="big-idea">🧩 Big idea:</h3>
+<blockquote>
+<p><code>make</code> is a <em>file generator by design</em>. If you're using it for <em>commands</em> (like <code>clean</code>), you must <strong>tell it explicitly</strong>.</p>
+</blockquote>
+<p>Here's a quick <strong>cheat sheet</strong> of common <code>.PHONY</code> targets used in Makefiles:</p>
+<hr />
+<h3 id="common-phony-targets">✅ Common <code>.PHONY</code> Targets</h3>
+<table>
+<thead>
+<tr>
+<th>Target</th>
+<th>Purpose</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>all</code></td>
+<td>Build everything (often the default target)</td>
+</tr>
+<tr>
+<td><code>clean</code></td>
+<td>Delete all compiled files and output (e.g. <code>*.o</code>, <code>prog</code>)</td>
+</tr>
+<tr>
+<td><code>distclean</code></td>
+<td>Like <code>clean</code>, but also remove generated directories/files</td>
+</tr>
+<tr>
+<td><code>install</code></td>
+<td>Copy the final program or files into a system location</td>
+</tr>
+<tr>
+<td><code>uninstall</code></td>
+<td>Remove files that were installed</td>
+</tr>
+<tr>
+<td><code>test</code></td>
+<td>Run tests</td>
+</tr>
+<tr>
+<td><code>check</code></td>
+<td>Alternative to <code>test</code>; runs validations</td>
+</tr>
+<tr>
+<td><code>run</code></td>
+<td>Run the program after building</td>
+</tr>
+<tr>
+<td><code>rebuild</code></td>
+<td>Clean and rebuild everything</td>
+</tr>
+<tr>
+<td><code>help</code></td>
+<td>Print help or usage info about available targets</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="example">🧾 Example</h3>
+<pre><code class="language-make">.PHONY: all clean install run
+
+all: myprogram
+
+myprogram: main.o
+    g++ -o myprogram main.o
+
+clean:
+    rm -f *.o myprogram
+
+install:
+    cp myprogram /usr/local/bin
+
+run: myprogram
+    ./myprogram
+</code></pre>
+<p>With <code>.PHONY</code>, <code>make</code> will run these even if files named <code>clean</code>, <code>install</code>, or <code>run</code> exist.</p>
+<hr />
+<p>Would you like this as a downloadable PDF cheat sheet too?</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -771,10 +1169,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/OSdocs/", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "/OSdocs/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/OSdocs/assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>

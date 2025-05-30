@@ -8,21 +8,27 @@
       
       
       
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/Processes/Process_ID/">
       
       
-      <link rel="icon" href="/OSdocs/assets/images/favicon.png">
+        <link rel="prev" href="../../IOprimitives/theory_IOprimitives_1/">
+      
+      
+        <link rel="next" href="../../Shell/command_line/">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>OS Docs</title>
+        <title>Process ID - OS Docs</title>
       
     
     
-      <link rel="stylesheet" href="/OSdocs/assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="/OSdocs/assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -38,7 +44,7 @@
       
     
     
-    <script>__md_scope=new URL("/OSdocs/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,6 +68,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#concurrent-v-parallel" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -74,7 +85,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/OSdocs/." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -93,7 +104,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              Process ID
             
           </span>
         </div>
@@ -152,7 +163,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/OSdocs/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -167,7 +178,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-tabs__link">
+      <a href="../../CompilationProcess/Make/Make/" class="md-tabs__link">
         Compilation Process
       </a>
     </li>
@@ -183,7 +194,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/memory.md" class="md-tabs__link">
+      <a href="../../memory.md" class="md-tabs__link">
         Memory
       </a>
     </li>
@@ -199,7 +210,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-tabs__link">
+      <a href="../../FileSystem/file_system_2/" class="md-tabs__link">
         File System
       </a>
     </li>
@@ -215,7 +226,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
+      <a href="../../IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
         IO Primitives
       </a>
     </li>
@@ -225,13 +236,15 @@
         
   
   
+    
+  
 
 
   
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-tabs__link">
+      <a href="./" class="md-tabs__link md-tabs__link--active">
         Processes
       </a>
     </li>
@@ -247,7 +260,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-tabs__link">
+      <a href="../../Shell/command_line/" class="md-tabs__link">
         Shell
       </a>
     </li>
@@ -263,7 +276,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-tabs__link">
+      <a href="../../Threads/pthreads/" class="md-tabs__link">
         Threads
       </a>
     </li>
@@ -297,7 +310,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/OSdocs/." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -316,7 +329,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -364,7 +377,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-nav__link">
+      <a href="../../CompilationProcess/Make/Make/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -378,7 +391,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/MakeLatex/" class="md-nav__link">
+      <a href="../../CompilationProcess/Make/MakeLatex/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -431,7 +444,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/memory.md" class="md-nav__link">
+      <a href="../../memory.md" class="md-nav__link">
         Malloc Calloc
       </a>
     </li>
@@ -484,7 +497,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-nav__link">
+      <a href="../../FileSystem/file_system_2/" class="md-nav__link">
         File System
       </a>
     </li>
@@ -537,7 +550,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
+      <a href="../../IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
         IO basics
       </a>
     </li>
@@ -557,14 +570,16 @@
 
   
   
+    
+  
   
     
-    <li class="md-nav__item md-nav__item--nested">
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
       
       
       
       
-      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" checked>
       
       
         
@@ -577,7 +592,7 @@
           <span class="md-nav__icon md-icon"></span>
         </label>
       
-      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="true">
         <label class="md-nav__title" for="__nav_6">
           <span class="md-nav__icon md-icon"></span>
           Processes
@@ -588,11 +603,89 @@
               
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Process ID
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Process ID
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concurrent-v-parallel" class="md-nav__link">
+    Concurrent v. Parallel
+  </a>
+  
+    <nav class="md-nav" aria-label="Concurrent v. Parallel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-uid-and-gid" class="md-nav__link">
+    1. UID and GID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-effective-uid-and-effective-gid" class="md-nav__link">
+    2. Effective UID and Effective GID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-practical-example-passwd-command" class="md-nav__link">
+    3. Practical Example (passwd Command)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-short" class="md-nav__link">
+    In Short:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operative-example" class="md-nav__link">
+    Operative Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -643,7 +736,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-nav__link">
+      <a href="../../Shell/command_line/" class="md-nav__link">
         Command Line
       </a>
     </li>
@@ -696,7 +789,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-nav__link">
+      <a href="../../Threads/pthreads/" class="md-nav__link">
         PThreads
       </a>
     </li>
@@ -728,6 +821,62 @@
   
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#concurrent-v-parallel" class="md-nav__link">
+    Concurrent v. Parallel
+  </a>
+  
+    <nav class="md-nav" aria-label="Concurrent v. Parallel">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-uid-and-gid" class="md-nav__link">
+    1. UID and GID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-effective-uid-and-effective-gid" class="md-nav__link">
+    2. Effective UID and Effective GID
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-practical-example-passwd-command" class="md-nav__link">
+    3. Practical Example (passwd Command)
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#in-short" class="md-nav__link">
+    In Short:
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#operative-example" class="md-nav__link">
+    Operative Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -738,8 +887,100 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+  <h1>Process ID</h1>
+
+<h2 id="concurrent-v-parallel">Concurrent v. Parallel</h2>
+<ul>
+<li>
+<p>Concurrent programming is about structure and management: handling multiple tasks by interleaving execution to improve responsiveness.</p>
+</li>
+<li>
+<p>Parallel computing is about performance and speed: dividing computations to physically run them simultaneously across multiple processors.</p>
+</li>
+</ul>
+<h3 id="1-uid-and-gid"><strong>1. UID and GID</strong></h3>
+<ul>
+<li><strong>UID (User ID):</strong> Identifies a user uniquely on a Unix/Linux system.</li>
+<li><strong>GID (Group ID):</strong> Identifies the user's primary group on the system.</li>
+</ul>
+<p>The functions:</p>
+<pre><code class="language-c">uid_t getuid();
+gid_t getgid();
+</code></pre>
+<p>These retrieve the real user ID and real group ID of the process, respectively.<br />
+The "real" IDs typically represent the user who initiated the process.</p>
+<hr />
+<h3 id="2-effective-uid-and-effective-gid"><strong>2. Effective UID and Effective GID</strong></h3>
+<p>In addition to the real IDs, processes have an <strong>Effective UID (EUID)</strong> and <strong>Effective GID (EGID)</strong>.</p>
+<ul>
+<li><strong>Effective UID (EUID)</strong> determines the permissions for file access and actions the process can perform.</li>
+<li><strong>Effective GID (EGID)</strong> affects group-level permissions.</li>
+</ul>
+<p>The functions:</p>
+<pre><code class="language-c">uid_t geteuid();
+gid_t getegid();
+</code></pre>
+<p>retrieve the effective user and group IDs, respectively.</p>
+<hr />
+<h3 id="3-practical-example-passwd-command"><strong>3. Practical Example (passwd Command)</strong></h3>
+<p>A typical example of this mechanism is the <code>passwd</code> command:</p>
+<ul>
+<li>Changing a user's password involves modifying sensitive system files, which typically only root can access.</li>
+<li>The <code>passwd</code> command needs temporary elevated permissions to perform this task, even if executed by a regular user.</li>
+<li>Therefore, <code>passwd</code> has the <strong>SetUID bit</strong> set. When executed, the operating system temporarily grants the command the <strong>Effective UID</strong> of the file's owner (usually root).</li>
+<li>Consequently, even though the Real UID remains the user running the command, the Effective UID is temporarily elevated to root to complete the task.</li>
+</ul>
+<p><strong>Example scenario:</strong>
+- Normal user executes: <code>passwd</code>
+- System recognizes the SetUID bit on <code>/usr/bin/passwd</code></p>
+<!-- - Temporarily elevates the command’s Effective UID to root. -->
+<ul>
+<li>Command runs with root permissions to change the password.</li>
+<li>After execution, privileges are dropped back to normal user levels.</li>
+</ul>
+<hr />
+<h3 id="in-short"><strong>In Short:</strong></h3>
+<ul>
+<li><strong>UID/GID</strong> → identity of the user/process.</li>
+<li><strong>Effective UID/GID</strong> → permissions a process uses to interact with system resources.</li>
+<li><strong>SetUID/SetGID bit</strong> → allows temporary privilege elevation, crucial for secure system operations.</li>
+</ul>
+<p>This mechanism is key to balancing security and usability in Unix/Linux systems.</p>
+<h3 id="operative-example">Operative Example</h3>
+<p>This output</p>
+<pre><code class="language-shell">Process ID (PID): 22153
+Parent Process ID (PPID): 21767
+User ID (UID): 1000
+Group ID (GID): 1000
+Effective User ID (EUID): 1000
+Effective Group ID (EGID): 1000
+</code></pre>
+<p>means</p>
+<pre><code class="language-text">Explanation of your output:
+PID (Process ID):
+22153 is the unique identifier assigned by the system to your running process.
+
+PPID (Parent Process ID):
+21767 identifies the parent process which launched your current program (often your shell, IDE, or terminal).
+
+User ID (UID):
+1000 usually indicates a standard, non-root user account (the first user account created in a Unix/Linux system is commonly assigned UID 1000).
+
+Group ID (GID):
+1000 is your default user group, typically matching your UID.
+
+Effective User ID (EUID) and Effective Group ID (EGID):
+Both 1000, indicating that no special privileges or changes to identity have been made to your program at this point.
+</code></pre>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -771,10 +1012,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/OSdocs/", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "/OSdocs/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/OSdocs/assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>

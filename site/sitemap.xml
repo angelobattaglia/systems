@@ -2,42 +2,122 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
          <loc>https://angelobattaglia.github.io/OSdocs/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/Process_ID/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/CompilationProcess/GCC/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/command_line/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/CompilationProcess/LibraryStructure/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/file_system/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/CompilationProcess/ProjectStructure/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/file_system_refined/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/CompilationProcess/dynamiclinking/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/pthreads/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/CompilationProcess/staticlinking/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/theory_IOprimitives_1/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/CompilationProcess/Make/Make/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/theory_IOprimitives_2/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/CompilationProcess/Make/MakeLatex/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/theory_IOprimitives_3/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/FileSystem/directories/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
     <url>
-         <loc>https://angelobattaglia.github.io/OSdocs/theory_IOprimitives_4/</loc>
-         <lastmod>2025-03-19</lastmod>
+         <loc>https://angelobattaglia.github.io/OSdocs/FileSystem/file_system/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/FileSystem/file_system_2/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/FileSystem/file_system_refined/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/FileSystem/write/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/IOprimitives/Generalities/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/IOprimitives/theory_IOprimitives_1/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/IOprimitives/theory_IOprimitives_2/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/IOprimitives/theory_IOprimitives_3/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/IOprimitives/theory_IOprimitives_4/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/Memory/memory/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/Processes/Process_ID/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/Shell/Find/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/Shell/PermissionManagement/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/Shell/command_line/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
+    </url>
+    <url>
+         <loc>https://angelobattaglia.github.io/OSdocs/Threads/pthreads/</loc>
+         <lastmod>2025-05-30</lastmod>
+         <changefreq>daily</changefreq>
     </url>
 </urlset>

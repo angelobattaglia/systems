@@ -8,21 +8,23 @@
       
       
       
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/IOprimitives/theory_IOprimitives_4/">
       
       
-      <link rel="icon" href="/OSdocs/assets/images/favicon.png">
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
     
     
       
-        <title>OS Docs</title>
+        <title>POSIX system calls for File Handling, part IV - OS Docs</title>
       
     
     
-      <link rel="stylesheet" href="/OSdocs/assets/stylesheets/main.85bb2934.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
       
         
-        <link rel="stylesheet" href="/OSdocs/assets/stylesheets/palette.a6bdf11c.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
       
       
 
@@ -38,7 +40,7 @@
       
     
     
-    <script>__md_scope=new URL("/OSdocs/",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
     
       
 
@@ -62,6 +64,11 @@
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
       
+        
+        <a href="#posix-system-calls-for-file-handling-part-iv" class="md-skip">
+          Skip to content
+        </a>
+      
     </div>
     <div data-md-component="announce">
       
@@ -74,7 +81,7 @@
 
 <header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
   <nav class="md-header__inner md-grid" aria-label="Header">
-    <a href="/OSdocs/." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -93,7 +100,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              
+              POSIX system calls for File Handling, part IV
             
           </span>
         </div>
@@ -152,7 +159,7 @@
 
 
   <li class="md-tabs__item">
-    <a href="/OSdocs/." class="md-tabs__link">
+    <a href="../.." class="md-tabs__link">
       Home
     </a>
   </li>
@@ -167,7 +174,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-tabs__link">
+      <a href="../../CompilationProcess/Make/Make/" class="md-tabs__link">
         Compilation Process
       </a>
     </li>
@@ -183,7 +190,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/memory.md" class="md-tabs__link">
+      <a href="../../memory.md" class="md-tabs__link">
         Memory
       </a>
     </li>
@@ -199,7 +206,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-tabs__link">
+      <a href="../../FileSystem/file_system_2/" class="md-tabs__link">
         File System
       </a>
     </li>
@@ -215,7 +222,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
+      <a href="../theory_IOprimitives_1/" class="md-tabs__link">
         IO Primitives
       </a>
     </li>
@@ -231,7 +238,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-tabs__link">
+      <a href="../../Processes/Process_ID/" class="md-tabs__link">
         Processes
       </a>
     </li>
@@ -247,7 +254,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-tabs__link">
+      <a href="../../Shell/command_line/" class="md-tabs__link">
         Shell
       </a>
     </li>
@@ -263,7 +270,7 @@
   
   
     <li class="md-tabs__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-tabs__link">
+      <a href="../../Threads/pthreads/" class="md-tabs__link">
         Threads
       </a>
     </li>
@@ -297,7 +304,7 @@
 
 <nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="/OSdocs/." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
+    <a href="../.." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
       
   
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
@@ -316,7 +323,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/." class="md-nav__link">
+      <a href="../.." class="md-nav__link">
         Home
       </a>
     </li>
@@ -364,7 +371,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/Make/" class="md-nav__link">
+      <a href="../../CompilationProcess/Make/Make/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -378,7 +385,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/CompilationProcess/Make/MakeLatex/" class="md-nav__link">
+      <a href="../../CompilationProcess/Make/MakeLatex/" class="md-nav__link">
         Compilation
       </a>
     </li>
@@ -431,7 +438,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/memory.md" class="md-nav__link">
+      <a href="../../memory.md" class="md-nav__link">
         Malloc Calloc
       </a>
     </li>
@@ -484,7 +491,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/FileSystem/file_system_2/" class="md-nav__link">
+      <a href="../../FileSystem/file_system_2/" class="md-nav__link">
         File System
       </a>
     </li>
@@ -537,7 +544,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
+      <a href="../theory_IOprimitives_1/" class="md-nav__link">
         IO basics
       </a>
     </li>
@@ -590,7 +597,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Processes/Process_ID/" class="md-nav__link">
+      <a href="../../Processes/Process_ID/" class="md-nav__link">
         Process ID
       </a>
     </li>
@@ -643,7 +650,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Shell/command_line/" class="md-nav__link">
+      <a href="../../Shell/command_line/" class="md-nav__link">
         Command Line
       </a>
     </li>
@@ -696,7 +703,7 @@
   
   
     <li class="md-nav__item">
-      <a href="/OSdocs/Threads/pthreads/" class="md-nav__link">
+      <a href="../../Threads/pthreads/" class="md-nav__link">
         PThreads
       </a>
     </li>
@@ -727,6 +734,138 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1-open" class="md-nav__link">
+    1. open()
+  </a>
+  
+    <nav class="md-nav" aria-label="1. open()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2-read" class="md-nav__link">
+    2. read()
+  </a>
+  
+    <nav class="md-nav" aria-label="2. read()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_1" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_1" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3-write" class="md-nav__link">
+    3. write()
+  </a>
+  
+    <nav class="md-nav" aria-label="3. write()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_2" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_2" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4-close" class="md-nav__link">
+    4. close()
+  </a>
+  
+    <nav class="md-nav" aria-label="4. close()">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#syntax_3" class="md-nav__link">
+    Syntax
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#example_3" class="md-nav__link">
+    Example
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#complete-example-file-copy-program" class="md-nav__link">
+    Complete Example: File Copy Program
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    Notes:
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -738,8 +877,203 @@
             <div class="md-content" data-md-component="content">
               <article class="md-content__inner md-typeset">
                 
-  <h1>404 - Not found</h1>
+                  
 
+
+<h1 id="posix-system-calls-for-file-handling-part-iv">POSIX system calls for File Handling, part IV</h1>
+<p>The <strong>POSIX system calls</strong> <code>open()</code>, <code>read()</code>, <code>write()</code>, and <code>close()</code> are low-level file operations used in C programming to interact with files. They provide direct interaction with the operating system and are included in <code>&lt;fcntl.h&gt;</code> and <code>&lt;unistd.h&gt;</code>. Below is an explanation of how to use each of these system calls, with examples.</p>
+<h3 id="1-open">1. <strong><code>open()</code></strong></h3>
+<p>The <code>open()</code> system call opens a file for reading, writing, or both. It returns a <strong>file descriptor</strong> (an integer) that is used in subsequent file operations.</p>
+<h4 id="syntax"><strong>Syntax</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+
+int open(const char *pathname, int flags, mode_t mode);
+</code></pre>
+<ul>
+<li><strong><code>pathname</code></strong>: The file to open (e.g., <code>"file.txt"</code>).</li>
+<li><strong><code>flags</code></strong>: Specifies the access mode:</li>
+<li><code>O_RDONLY</code>: Open for reading.</li>
+<li><code>O_WRONLY</code>: Open for writing.</li>
+<li><code>O_RDWR</code>: Open for reading and writing.</li>
+<li>Add flags like <code>O_CREAT</code> (create file if it doesn’t exist) or <code>O_APPEND</code> (append mode).</li>
+<li><strong><code>mode</code></strong>: File permissions (only used if creating a file, e.g., <code>0644</code> for <code>rw-r--r--</code>).</li>
+</ul>
+<h4 id="example"><strong>Example</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    int fd = open(&quot;example.txt&quot;, O_WRONLY | O_CREAT, 0644);
+    if (fd == -1) {
+        perror(&quot;open&quot;);
+        return 1;
+    }
+    // Use `fd` for further operations
+    close(fd);
+    return 0;
+}
+</code></pre>
+<hr />
+<h3 id="2-read">2. <strong><code>read()</code></strong></h3>
+<p>The <code>read()</code> system call reads data from a file into a buffer.</p>
+<h4 id="syntax_1"><strong>Syntax</strong></h4>
+<pre><code class="language-c">ssize_t read(int fd, void *buf, size_t count);
+</code></pre>
+<ul>
+<li><strong><code>fd</code></strong>: File descriptor returned by <code>open()</code>.</li>
+<li><strong><code>buf</code></strong>: Buffer to store the data.</li>
+<li><strong><code>count</code></strong>: Number of bytes to read.</li>
+<li><strong>Returns</strong>: Number of bytes actually read, or <code>0</code> if end-of-file (EOF) is reached.</li>
+</ul>
+<h4 id="example_1"><strong>Example</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    char buffer[128];
+    int fd = open(&quot;example.txt&quot;, O_RDONLY);
+    if (fd == -1) {
+        perror(&quot;open&quot;);
+        return 1;
+    }
+    ssize_t bytesRead = read(fd, buffer, sizeof(buffer) - 1);
+    if (bytesRead == -1) {
+        perror(&quot;read&quot;);
+        close(fd);
+        return 1;
+    }
+    buffer[bytesRead] = '\0'; // Null-terminate the buffer
+    printf(&quot;Read: %s\n&quot;, buffer);
+    close(fd);
+    return 0;
+}
+</code></pre>
+<hr />
+<h3 id="3-write">3. <strong><code>write()</code></strong></h3>
+<p>The <code>write()</code> system call writes data from a buffer to a file.</p>
+<h4 id="syntax_2"><strong>Syntax</strong></h4>
+<pre><code class="language-c">ssize_t write(int fd, const void *buf, size_t count);
+</code></pre>
+<ul>
+<li><strong><code>fd</code></strong>: File descriptor returned by <code>open()</code>.</li>
+<li><strong><code>buf</code></strong>: Buffer containing the data to write.</li>
+<li><strong><code>count</code></strong>: Number of bytes to write.</li>
+<li><strong>Returns</strong>: Number of bytes written.</li>
+</ul>
+<h4 id="example_2"><strong>Example</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    const char *text = &quot;Hello, world!\n&quot;;
+    int fd = open(&quot;example.txt&quot;, O_WRONLY | O_CREAT | O_APPEND, 0644);
+    if (fd == -1) {
+        perror(&quot;open&quot;);
+        return 1;
+    }
+    ssize_t bytesWritten = write(fd, text, 14);
+    if (bytesWritten == -1) {
+        perror(&quot;write&quot;);
+        close(fd);
+        return 1;
+    }
+    printf(&quot;Wrote %zd bytes\n&quot;, bytesWritten);
+    close(fd);
+    return 0;
+}
+</code></pre>
+<h3 id="4-close">4. <strong><code>close()</code></strong></h3>
+<p>The <code>close()</code> system call closes an open file descriptor, releasing the resources associated with it.</p>
+<h4 id="syntax_3"><strong>Syntax</strong></h4>
+<pre><code class="language-c">int close(int fd);
+</code></pre>
+<ul>
+<li><strong><code>fd</code></strong>: File descriptor to close.</li>
+<li><strong>Returns</strong>: <code>0</code> on success, or <code>-1</code> on failure.</li>
+</ul>
+<h4 id="example_3"><strong>Example</strong></h4>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    int fd = open(&quot;example.txt&quot;, O_RDONLY);
+    if (fd == -1) {
+        perror(&quot;open&quot;);
+        return 1;
+    }
+    // Perform file operations...
+    if (close(fd) == -1) {
+        perror(&quot;close&quot;);
+        return 1;
+    }
+    return 0;
+}
+</code></pre>
+<hr />
+<h3 id="complete-example-file-copy-program">Complete Example: File Copy Program</h3>
+<p>Here's a small program that copies the content of one file to another:</p>
+<pre><code class="language-c">#include &lt;fcntl.h&gt;
+#include &lt;unistd.h&gt;
+#include &lt;stdio.h&gt;
+
+int main() {
+    char buffer[1024];
+    ssize_t bytesRead, bytesWritten;
+
+    // Open source file
+    int source = open(&quot;source.txt&quot;, O_RDONLY);
+    if (source == -1) {
+        perror(&quot;open source&quot;);
+        return 1;
+    }
+
+    // Open destination file
+    int dest = open(&quot;dest.txt&quot;, O_WRONLY | O_CREAT | O_TRUNC, 0644);
+    if (dest == -1) {
+        perror(&quot;open dest&quot;);
+        close(source);
+        return 1;
+    }
+
+    // Read and write loop
+    while ((bytesRead = read(source, buffer, sizeof(buffer))) &gt; 0) {
+        bytesWritten = write(dest, buffer, bytesRead);
+        if (bytesWritten != bytesRead) {
+            perror(&quot;write&quot;);
+            close(source);
+            close(dest);
+            return 1;
+        }
+    }
+    if (bytesRead == -1) {
+        perror(&quot;read&quot;);
+    }
+
+    // Close files
+    close(source);
+    close(dest);
+    return 0;
+}
+</code></pre>
+<hr />
+<h3 id="notes">Notes:</h3>
+<ul>
+<li>Always check the return values of these calls for errors.</li>
+<li>Errors can be inspected using <code>errno</code> and printed with <code>perror()</code> or <code>strerror()</code>.</li>
+<li>File permissions (e.g., <code>0644</code>) are written in octal.</li>
+</ul>
+<p>Let me know if you have further questions!</p>
+
+
+
+
+
+                
               </article>
             </div>
           
@@ -771,10 +1105,10 @@
       <div class="md-dialog__inner md-typeset"></div>
     </div>
     
-    <script id="__config" type="application/json">{"base": "/OSdocs/", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "/OSdocs/assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
     
     
-      <script src="/OSdocs/assets/javascripts/bundle.b4d07000.min.js"></script>
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
       
     
   </body>
