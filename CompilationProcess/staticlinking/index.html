@@ -1,0 +1,963 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://angelobattaglia.github.io/OSdocs/CompilationProcess/staticlinking/">
+      
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.4.3, mkdocs-material-9.1.13">
+    
+    
+      
+        <title>Static Linking - OS Docs</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.85bb2934.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.a6bdf11c.min.css">
+      
+      
+
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce((e,_)=>(e<<5)-e+_.charCodeAt(0),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="deep-purple" data-md-color-accent="indigo">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#static-linking" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow md-header--lifted" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="OS Docs" class="md-header__button md-logo" aria-label="OS Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            OS Docs
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Static Linking
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+    
+      
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  <li class="md-tabs__item">
+    <a href="../.." class="md-tabs__link">
+      Home
+    </a>
+  </li>
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../Make/Make/" class="md-tabs__link">
+        Compilation Process
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../memory.md" class="md-tabs__link">
+        Memory
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../FileSystem/file_system_2/" class="md-tabs__link">
+        File System
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../IOprimitives/theory_IOprimitives_1/" class="md-tabs__link">
+        IO Primitives
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Processes/Process_ID/" class="md-tabs__link">
+        Processes
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Shell/command_line/" class="md-tabs__link">
+        Shell
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../Threads/pthreads/" class="md-tabs__link">
+        Threads
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+    
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="OS Docs" class="md-nav__button md-logo" aria-label="OS Docs" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    OS Docs
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+      
+      
+        
+          
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+          Compilation Process
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Compilation Process
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Make/Make/" class="md-nav__link">
+        Compilation
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Make/MakeLatex/" class="md-nav__link">
+        Compilation
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+          Memory
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Memory
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../memory.md" class="md-nav__link">
+        Malloc Calloc
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+          File System
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          File System
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../FileSystem/file_system_2/" class="md-nav__link">
+        File System
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+          IO Primitives
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          IO Primitives
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../IOprimitives/theory_IOprimitives_1/" class="md-nav__link">
+        IO basics
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_6" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+          Processes
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          Processes
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Processes/Process_ID/" class="md-nav__link">
+        Process ID
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_7" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+          Shell
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          Shell
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Shell/command_line/" class="md-nav__link">
+        Command Line
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+      
+      
+      <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_8" >
+      
+      
+        
+          
+        
+      
+      
+        <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+          Threads
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          Threads
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../Threads/pthreads/" class="md-nav__link">
+        PThreads
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+<h1 id="static-linking">Static Linking</h1>
+<ul>
+<li>First step: compile Script02.c into Script02.o, important using the '-c' flag</li>
+</ul>
+<pre><code class="language-shell">gcc -c Script02.c
+</code></pre>
+<pre><code class="language-shell">gcc -c Script02.c       # Compiles to Script02.o
+gcc -o program Script02.o   # Links to create 'program' (the executable)
+</code></pre>
+<ul>
+<li>Second step: create a Statically Linked Library with Script02.o being a part of</li>
+</ul>
+<pre><code>ar rcs libmylib.a Script02.o
+</code></pre>
+<ul>
+<li>Third step: Static compile-link Script01.c with libmylib.a as a linked library</li>
+<li>'-static' specifies that is being statically linked</li>
+<li>'-L.' specifies the library path (current directory .)</li>
+<li>'-l' specifies the library</li>
+<li>'mylib' is specified without the prefex lib, as well as the suffix .a</li>
+</ul>
+<pre><code>gcc -static Script01.c -L. -lmylib
+</code></pre>
+<ul>
+<li>Fourth step: run the result, i.e. a.out, as usual</li>
+</ul>
+<pre><code>./a.out
+</code></pre>
+<h1 id="static-linking_1">Static Linking</h1>
+<p>In the context of Linux and C/C++ programming, static and dynamic linking are two different methods of combining various pieces of code into a single executable program.
+Linking a C++ script with a library during the compilation process through the Command Line Interface (CLI)
+may vary depending on your operating system and development environment. In static linking, all the required code from external libraries and the application
+code are combined into a single large executable file during the compile time. 
+This includes copying the object code of used library functions directly into the final executable. When you compile your C/C++ program, the compiler links the object
+code of your program with the object code of any libraries you used. These libraries are typically <code>.a</code> (archive) files on Linux. 
+The end result is a standalone executable that contains all the necessary code, including the library functions.
+The advantages are that the final executable does not depend on external libraries at runtime and that you're ensured that the library version your program was compiled
+with is the one it runs with. It's also easier for the distribution as the executable is self-contained.
+The disadvantages concern the size, since the executables can be larger since they include all library code, and updating a library which results in recompiling all dependent
+programs. Also the resource usage, as multiple programs using the same library each have their own copy in memory, which can be optimized by just using one copy for them all.</p>
+<h2 id="steps">Steps:</h2>
+<ol>
+<li><strong>Write Your C++ Code:</strong>
+   Create your C++ source code file, for example, <code>main.cpp</code>.</li>
+</ol>
+<p>```cpp
+   // main.cpp
+   #include <iostream>
+   #include "mylibrary.h"</p>
+<p>int main() {
+       // Your code here
+       return 0;
+   }
+   ```</p>
+<ol>
+<li><strong>Write the Library Code:</strong>
+   Create the library source code file, for example, <code>mylibrary.cpp</code>.</li>
+</ol>
+<p>```cpp
+   // mylibrary.cpp
+   #include <iostream></p>
+<p>void myLibraryFunction() {
+       // Your library code here
+   }
+   ```</p>
+<p>Create the corresponding header file, for example, <code>mylibrary.h</code>.</p>
+<p>```cpp
+   // mylibrary.h
+   #ifndef MYLIBRARY_H
+   #define MYLIBRARY_H</p>
+<p>void myLibraryFunction();</p>
+<p>#endif // MYLIBRARY_H
+   ```</p>
+<ol>
+<li><strong>Compile Library:</strong>
+   Compile the library source code into a shared or static library. The exact command may vary based on your compiler and platform.</li>
+</ol>
+<p><code>bash
+   g++ -c mylibrary.cpp -o mylibrary.o
+   g++ -shared -o libmylibrary.so mylibrary.o  # For shared library (.so) on Linux</code></p>
+<p>Or for a static library:</p>
+<p><code>bash
+   ar rcs libmylibrary.a mylibrary.o  # For static library (.a)</code></p>
+<ol>
+<li><strong>Compile Main Code:</strong>
+   Compile your main C++ code, linking it with the library. You'll need to specify the library file and its path.</li>
+</ol>
+<p><code>bash
+   g++ -o myprogram main.cpp -L/path/to/library -lmylibrary</code></p>
+<p>Replace <code>/path/to/library</code> with the actual path where your library file (<code>libmylibrary.so</code> or <code>libmylibrary.a</code>) is located.</p>
+<ol>
+<li><strong>Run the Executable:</strong>
+   Run your compiled executable.</li>
+</ol>
+<p><code>bash
+   ./myprogram</code></p>
+<h3 id="notes">Notes:</h3>
+<ul>
+<li>The specific commands and flags may vary depending on your compiler (e.g., <code>g++</code> for GCC, <code>clang++</code> for Clang) and operating system.</li>
+<li>Ensure that the library file and its path are correctly specified during the compilation process.</li>
+<li>Adjust library names and file extensions based on your platform (e.g., <code>.so</code> for shared libraries on Linux, <code>.dylib</code> for macOS, <code>.dll</code> for Windows).</li>
+<li>If using header files (<code>mylibrary.h</code>), make sure they are in the correct location or include the appropriate <code>-I</code> flag to specify the include path.</li>
+</ul>
+<p>Adapt the commands based on your specific requirements and development environment.</p>
+<h2 id="creating-and-packaging-a-statically-linked-library">Creating and packaging a statically linked library</h2>
+<p>Creating and packaging a static library on Linux using GCC involves several steps. I'll guide you through the process with a simple example.</p>
+<p>Let's assume you have a library with two source files: <code>mylibrary.cpp</code> and <code>mylibrary.h</code>. We'll create a static library named <code>libmylibrary.a</code>.</p>
+<h3 id="1-write-library-code">1. Write Library Code:</h3>
+<p>Create <code>mylibrary.h</code>:</p>
+<pre><code class="language-cpp">// mylibrary.h
+#ifndef MYLIBRARY_H
+#define MYLIBRARY_H
+
+void myLibraryFunction();
+
+#endif // MYLIBRARY_H
+</code></pre>
+<p>Create <code>mylibrary.cpp</code>:</p>
+<pre><code class="language-cpp">// mylibrary.cpp
+#include &quot;mylibrary.h&quot;
+#include &lt;iostream&gt;
+
+void myLibraryFunction() {
+    std::cout &lt;&lt; &quot;Hello from myLibraryFunction!&quot; &lt;&lt; std::endl;
+}
+</code></pre>
+<h3 id="2-compile-library">2. Compile Library:</h3>
+<p>Compile the library source code into an object file and then create the static library.</p>
+<pre><code class="language-bash"># Compile the source file into an object file
+g++ -c mylibrary.cpp -o mylibrary.o
+
+# Create the static library
+ar rcs libmylibrary.a mylibrary.o
+</code></pre>
+<p>This will generate a static library file named <code>libmylibrary.a</code>.</p>
+<h3 id="3-write-main-code">3. Write Main Code:</h3>
+<p>Create a main program, e.g., <code>main.cpp</code>:</p>
+<pre><code class="language-cpp">// main.cpp
+#include &quot;mylibrary.h&quot;
+
+int main() {
+    myLibraryFunction();
+    return 0;
+}
+</code></pre>
+<h3 id="4-compile-main-code-with-the-library">4. Compile Main Code with the Library:</h3>
+<p>Compile the main program, linking it with the static library.</p>
+<pre><code class="language-bash">g++ -o myprogram main.cpp -L. -lmylibrary
+</code></pre>
+<p>Here, <code>-L.</code> specifies the library search path (current directory), and <code>-lmylibrary</code> links against the <code>libmylibrary.a</code> static library.</p>
+<h3 id="5-run-the-executable">5. Run the Executable:</h3>
+<p>Run your compiled executable:</p>
+<pre><code class="language-bash">./myprogram
+</code></pre>
+<p>This should print "Hello from myLibraryFunction!" to the console.</p>
+<h3 id="notes_1">Notes:</h3>
+<ul>
+<li>Ensure that the library file (<code>libmylibrary.a</code>) is in the same directory or provide the correct path during the compilation.</li>
+<li>Adjust the compilation commands based on your specific project structure and requirements.</li>
+<li>The library file extension for static libraries is typically <code>.a</code> on Linux.</li>
+<li>You can distribute the <code>libmylibrary.a</code> file along with the header file (<code>mylibrary.h</code>) for others to use in their programs. They would then link against your static library when compiling their programs.</li>
+</ul>
+<h3 id="conclusion">Conclusion</h3>
+<ul>
+<li><strong>Static Linking</strong> is used when you want to ensure your program is self-contained and consistent, but at the cost of larger executable size and potentially more memory usage.</li>
+</ul>
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    <script id="__config" type="application/json">{"base": "../..", "features": ["content.code.copy", "navigation.tabs", "navigation.tabs.sticky", "navigation.indexes", "navigation.sections", "navigation.path"], "search": "../../assets/javascripts/workers/search.208ed371.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.b4d07000.min.js"></script>
+      
+    
+  </body>
+</html>
